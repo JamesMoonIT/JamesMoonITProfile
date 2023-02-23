@@ -4,14 +4,13 @@ html, body {
     margin-bottom: 60px;
     overflow: hidden;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:white;
 }
 
-body {
-    background: url('../img/animation.gif') no-repeat center center fixed;
-    background-size: cover;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
+#myVideo {
+    position:center;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -30,12 +29,25 @@ body {
     .titletext p {
         font-family: 'Roboto', sans-serif;
         font-weight: 900;
-        color: white;
         text-transform: uppercase;
         margin: 0;
         position: absolute;
         top: 50%;
         left: 50%;
-        font-size: 2rem;
+        font-size: 0.8rem;
         transform: translate(-50%, -50%);
     }
+
+.arrow {
+    z-index: 1;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.left {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position:absolute;
+}
