@@ -1,18 +1,41 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+html, body {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 60px;
+    overflow: hidden;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 body {
-  margin-bottom: 60px;
+    background: url('../img/animation.gif') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.titletext {
+    height: 10em;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+    .titletext p {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        color: white;
+        text-transform: uppercase;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 2rem;
+        transform: translate(-50%, -50%);
+    }
