@@ -20,9 +20,11 @@ html, body {
 }
 
 .titletext {
-    height: 10em;
+    top: 0;
+    height: 50vh;
+    width: 50vw;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
 }
 
