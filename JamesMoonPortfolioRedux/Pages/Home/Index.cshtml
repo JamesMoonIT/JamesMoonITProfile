@@ -3,12 +3,112 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<video autoplay muted loop id="myVideo">
-    <source src="~/img/animation.mp4" type="video/mp4" />
-</video>
-<div class="titletext">
-    <p>
-        Welcome
-    </p>
+<div class="home">
+    <video autoplay muted loop id="myVideo">
+        <source src="~/img/animation.mp4" type="video/mp4" />
+    </video>
+    <div class="titletext">
+        <p>
+            Welcome to James Moon's Portfolio
+            <div class="small">Select an arrow to navigate</div>
+        </p>
+    </div>
+    <div class="leftButton">
+        <i class="arrow left"></i>
+    </div>
+    <div class="rightButton">
+        <i class="arrow right"></i>
+    </div>
+    <div class="bottomButton">
+        <i class="arrow bottom"></i>
+    </div>
 </div>
-<i class="arrow left"></i>
+
+<div class="rightPage">
+    <div class="titletext">
+        <p>
+            About Me
+        </p>
+    </div>
+    <div class="leftButton">
+        <i class="arrow right"></i>
+    </div>
+</div>
+
+<div class="leftPage">
+    <div class="titletext">
+        <p>
+            Contact Me
+        </p>
+    </div>
+    <div class="rightButton">
+        <i class="arrow left"></i>
+    </div>
+</div>
+
+<div class="bottomPage">
+    <div class="titletext">
+        <p>
+            My Projects
+        </p>
+    </div>
+    <div class="topButton">
+        <i class="arrow bottom"></i>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        let active = '';
+        console.log(active);
+
+        $('.rightButton').click(function () {
+            $('.home').toggleClass('homeVisibility');
+            if (active == '') {
+                $('.rightPage').toggleClass('activeRight');
+                active = 'right';
+            } 
+            else if (active == 'left') {
+                $('.leftPage').toggleClass('activeLeft');
+                active = '';
+            }
+            console.log(active);
+        });
+        $('.leftButton').click(function () {
+            $('.home').toggleClass('homeVisibility');
+            if (active == '') {
+                $('.leftPage').toggleClass('activeLeft');
+                active = 'left';
+            } 
+            else if (active == 'right') {
+                $('.rightPage').toggleClass('activeRight');
+                active == '';
+            }
+            console.log(active);
+        });
+        $('.bottomButton').click(function () {
+            $('.home').toggleClass('homeVisibility');
+            if (active == '') {
+                $('.bottomPage').toggleClass('activeBottom');
+                active = 'bottom';
+            } 
+            else if (active == 'top') {
+                $('.topPage').toggleClass('activetop');
+                active == '';
+            }
+            console.log(active);
+        });
+        $('.topButton').click(function () {
+            $('.home').toggleClass('homeVisibility');
+            if (active == '') {
+                $('.topPage').toggleClass('activeTop');
+                active = 'top';
+            } 
+            else if (active == 'bottom') {
+                $('.bottomPage').toggleClass('activeBottom');
+                active == '';
+            }
+            console.log(active);
+        });
+    </script>
+}
