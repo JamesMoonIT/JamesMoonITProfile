@@ -60,6 +60,7 @@ html, body {
     padding: 3px;
     color: #f00;
     position: absolute;
+    opacity: 1;
 }
 
 .left {

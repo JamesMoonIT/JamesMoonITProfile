@@ -31,7 +31,7 @@
         </p>
     </div>
     <div class="leftButton">
-        <i class="arrow right"></i>
+        <i class="arrow left"></i>
     </div>
 </div>
 
@@ -42,7 +42,7 @@
         </p>
     </div>
     <div class="rightButton">
-        <i class="arrow left"></i>
+        <i class="arrow right"></i>
     </div>
 </div>
 
@@ -53,7 +53,7 @@
         </p>
     </div>
     <div class="topButton">
-        <i class="arrow bottom"></i>
+        <i class="arrow top"></i>
     </div>
 </div>
 
@@ -65,48 +65,48 @@
         $('.rightButton').click(function () {
             $('.home').toggleClass('homeVisibility');
             if (active == '') {
-                $('.rightPage').toggleClass('activeRight');
                 active = 'right';
-            } 
+                $('.rightPage').toggleClass('activeRight');
+            }
             else if (active == 'left') {
-                $('.leftPage').toggleClass('activeLeft');
                 active = '';
+                $('.leftPage').toggleClass('activeLeft');
             }
             console.log(active);
         });
         $('.leftButton').click(function () {
             $('.home').toggleClass('homeVisibility');
             if (active == '') {
-                $('.leftPage').toggleClass('activeLeft');
                 active = 'left';
-            } 
+                $('.leftPage').toggleClass('activeLeft');
+            }
             else if (active == 'right') {
+                active = '';
                 $('.rightPage').toggleClass('activeRight');
-                active == '';
             }
             console.log(active);
         });
         $('.bottomButton').click(function () {
             $('.home').toggleClass('homeVisibility');
             if (active == '') {
-                $('.bottomPage').toggleClass('activeBottom');
                 active = 'bottom';
-            } 
+                $('.bottomPage').toggleClass('activeBottom');
+            }
             else if (active == 'top') {
+                active = '';
                 $('.topPage').toggleClass('activetop');
-                active == '';
             }
             console.log(active);
         });
         $('.topButton').click(function () {
             $('.home').toggleClass('homeVisibility');
             if (active == '') {
-                $('.topPage').toggleClass('activeTop');
                 active = 'top';
-            } 
+                $('.topPage').toggleClass('activeTop');
+            }
             else if (active == 'bottom') {
+                active = '';
                 $('.bottomPage').toggleClass('activeBottom');
-                active == '';
             }
             console.log(active);
         });
