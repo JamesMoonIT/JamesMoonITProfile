@@ -53,6 +53,24 @@ html, body {
         text-align: center;
     }
 
+.contentbox {
+    position: absolute;
+    border: solid white;
+    height: 80vh;
+    width: 80vw;
+    left: 10%;
+    top: 10%;
+    background-color: aliceblue;
+}
+
+    .contentbox h1 {
+        color: black
+    }
+
+    .contentbox p {
+        color: black;
+    }
+
 .arrow {
     border: solid #232323;
     border-width: 0 6px 6px 0;
