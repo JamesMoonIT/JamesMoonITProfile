@@ -13,8 +13,16 @@
         @RenderBody()
     </main>
 
+    <button class="open-button" onclick="openForm()"><img class="open-button" src="img/expert.png" alt="Talk to an Expert" /></button>
+    <div class="chat-popup" id="popupBox" style="display: block">
+        <iframe src="chatbot/chat.html"></iframe>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/chatbot/js/rivescript.js"></script>
+    <script src="~/js/site.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
