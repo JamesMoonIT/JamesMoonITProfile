@@ -9,36 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="chatbot\brain\admin.rive" />
-    <Content Include="chatbot\brain\begin.rive" />
-    <Content Include="chatbot\brain\clients.rive" />
-    <Content Include="chatbot\brain\coffee.rive" />
-    <Content Include="chatbot\brain\eliza.rive" />
-    <Content Include="chatbot\brain\javascript.rive" />
-    <Content Include="chatbot\brain\myexpert.rive" />
-    <Content Include="chatbot\brain\myself.rive" />
-    <Content Include="chatbot\brain\README.md" />
-    <Content Include="chatbot\brain\rpg.rive" />
-    <Content Include="chatbot\brain\_notes\dwsync.xml" />
-    <Content Include="chatbot\chat.html" />
-    <Content Include="chatbot\css\boilerplate.css" />
-    <Content Include="chatbot\css\botstyle.css" />
-    <Content Include="chatbot\css\chat3.css" />
-    <Content Include="chatbot\css\template.css" />
-    <Content Include="chatbot\css\_notes\dwsync.xml" />
-    <Content Include="chatbot\js\datadumper.js" />
-    <Content Include="chatbot\js\jquery-1.7.2.min.js" />
-    <Content Include="chatbot\js\README.md" />
-    <Content Include="chatbot\js\respond.min.js" />
-    <Content Include="chatbot\js\rivescript.js" />
-    <Content Include="chatbot\js\_notes\dwsync.xml" />
-    <Content Include="chatbot\testsuite.rive" />
-    <Content Include="chatbot\_notes\dwsync.xml" />
+    <Compile Remove="chatbot\**" />
+    <Compile Remove="Models\**" />
+    <Content Remove="chatbot\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="chatbot\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="chatbot\**" />
+    <None Remove="Models\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
