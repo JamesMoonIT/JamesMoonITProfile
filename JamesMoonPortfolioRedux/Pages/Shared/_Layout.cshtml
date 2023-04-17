@@ -14,8 +14,8 @@
     </main>
 
     <button class="open-button" onclick="openForm()"><img class="open-button" src="img/expert.png" alt="Talk to an Expert" /></button>
-    <div class="chat-popup" id="popupBox" style="display: block">
-        <iframe src="chatbot/chat.html"></iframe>
+    <div class="chat-popup" id="popupBox" style="position: absolute; bottom: 0; right: 0; transform: scale(0.5); transform-origin: bottom right;">
+        <iframe src="chatbot/chat.html" width="500" height="500"></iframe> <!-- adjust the src of the iframe to point to your chatbot /-->
         <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
     </div>
 

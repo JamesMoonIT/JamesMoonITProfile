@@ -3,15 +3,16 @@
 <!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
 <!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="">
+<html class="" style="height: 100%">
 <!--<![endif]-->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=0.2">
     <link rel="stylesheet" type="text/css" href="css/botstyle.css">
     <title>Harry, the Houdini Expert</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/datadumper.js"></script>
     <script type="text/javascript" src="js/rivescript.js"></script>
     <script type="text/javascript" src="js/respond.min.js"></script>
@@ -44,18 +45,16 @@
     <script type="text/javascript">
 
         // Create our RiveScript interpreter.
-        var rs = new RiveScript({
-
-        });
+        var rs = new RiveScript();
 
         // This won't work on the web!
         //rs.loadDirectory("brain");
 
         // Load our files from the brain/ folder.
-        rs.loadFile("brain/begin.rive", on_load_success, on_load_error);
-        rs.loadFile("brain/clients.rive", on_load_success, on_load_error);
-        rs.loadFile("brain/myself.rive", on_load_success, on_load_error);
-        rs.loadFile("brain/myexpert.rive", on_load_success, on_load_error);
+        rs.loadFile("../chatbot/brain/begin.rive", on_load_success, on_load_error);
+        rs.loadFile("../chatbot/brain/clients.rive", on_load_success, on_load_error);
+        rs.loadFile("../chatbot/brain/myself.rive", on_load_success, on_load_error);
+        rs.loadFile("../chatbot/brain/myexpert.rive", on_load_success, on_load_error);
 
         // You can register objects that can then be called
         // using <call></call> syntax
@@ -68,7 +67,7 @@
             $("#message").attr("placeholder", "Send message");
             $("#message").focus();
 
-            $("#dialogue").append("<div class='botText'><span class='bot'>Harry:</span> " + "Hi there, I'm Harry. Harry the Houdini expert. I'm here to assist with any questions you may want answered. Feel free to write something below and I shall do my best to answer them!" + "</div>");
+            $("#dialogue").append("<div class='botText'><span class='bot'>JamesBot:</span> " + "Hi there, I'm James 2.0, James Moon's AI assistant. Incase you are curious, this is possible through James's knowledge of the Rivescript chat library. Now, how can I help you today?" + "</div>");
 
             // Now to sort the replies!
             rs.sortReplies();
