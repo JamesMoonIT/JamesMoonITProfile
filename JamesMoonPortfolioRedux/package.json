@@ -3,6 +3,7 @@
   "name": "asp.net",
   "private": true,
   "devDependencies": {
+    "eslint": "^8.38.0",
     "rivescript": "2.2.1"
   }
 }

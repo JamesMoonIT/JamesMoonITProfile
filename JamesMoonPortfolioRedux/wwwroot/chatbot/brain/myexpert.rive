@@ -1,17 +1,9 @@
 ! version = 2.0
 ! sub fix = fixing
-! sub it = houdini
-! sub houdnini = houdini
-! sub houdin i = houdini
-! sub houndini = houdini
-! sub huodini = houdini
 
 ! var name = Harry
 
 //First couple of questions added to add bot character (later adding to greetings.rive)
-
-+ (hi|hello|gday|howdy|greetings)
-- Hi there, how can I help you?
 
 + my name is *
 - <set myname=<star>>Nice to meet you, <get name>.
@@ -23,15 +15,9 @@
 + * your name
 - I'm <get name>, <get name> the Houdini Bot (no affiliation)
 
-+ * magic [*]
-- Im afraid I only know the magic of amazing animations.
-
 + * hate *
 * <get name> == undefined => That's a little harsh, don't you think?
 - That's a little harsh, don't you think <get myname>?
-
-+ [*] (no|not) [*]
-- Thats ok. How can I help?
 
 // Website Subject-specific questions start here
 

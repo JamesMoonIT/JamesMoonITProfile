@@ -9,8 +9,8 @@
     </video>
     <div class="titletext">
         <p>
-            Welcome to James Moon's Portfolio
-            <div class="small">Select an arrow to navigate</div>
+            <!--Welcome to James Moon's Portfolio -->
+            Test
         </p>
     </div>
     <div class="leftButton">
@@ -59,7 +59,7 @@
 
 @section scripts {
     <script type="text/javascript">
-
+        let active = '';
         $('.rightButton').click(function () {
             $('.home').toggleClass('homeVisibility');
             if (active == '') {
@@ -70,7 +70,7 @@
                 active = '';
                 $('.leftPage').toggleClass('activeLeft');
             }
-            console.log(active);
+            //console.log(active);
         });
         $('.leftButton').click(function () {
             $('.home').toggleClass('homeVisibility');
@@ -82,7 +82,7 @@
                 active = '';
                 $('.rightPage').toggleClass('activeRight');
             }
-            console.log(active);
+            //console.log(active);
         });
         $('.bottomButton').click(function () {
             $('.home').toggleClass('homeVisibility');
@@ -94,7 +94,7 @@
                 active = '';
                 $('.topPage').toggleClass('activetop');
             }
-            console.log(active);
+            //console.log(active);
         });
         $('.topButton').click(function () {
             $('.home').toggleClass('homeVisibility');
@@ -106,7 +106,7 @@
                 active = '';
                 $('.bottomPage').toggleClass('activeBottom');
             }
-            console.log(active);
+            //console.log(active);
         });
     </script>
 }

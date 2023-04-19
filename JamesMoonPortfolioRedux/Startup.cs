@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.FileProviders;
 
 namespace JamesMoonPortfolioRedux
 {
@@ -26,8 +27,8 @@ namespace JamesMoonPortfolioRedux
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseRouting();
+            app.UseStaticFiles();
             app.UseAuthorization();
             app.MapRazorPages();
             app.Run();
