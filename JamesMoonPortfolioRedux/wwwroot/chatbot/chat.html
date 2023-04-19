@@ -43,17 +43,8 @@ var rs;
 	// This won't work on the web!
 	//rs.loadDirectory("brain");
 
-	const d = window.location.origin;
-    console.log("begin.rive",
-        "admin.rive",
-        "clients.rive",
-        "eliza.rive",
-        "brain/myself.rive",
-        "brain/rpg.rive",
-        "brain/javascript.rive")
-
 	// Load our files from the brain/ folder.
-    rs.loadFile("brain/begin.rive").then(onReady).catch(onError);
+    rs.loadFile("brain/bigbrain.rive").then(onReady).catch(onError);
 
 
 	// You can register objects that can then be called
