@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="css/chat.css">
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/datadumper.js"></script>
-<script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+<script type="text/javascript" src="js/rivescript.js"></script>
 </head>
 <body>
 
@@ -35,16 +35,15 @@
 <script type="text/javascript">
 
 // Problem loading rivescript.js?
-var rs;
 	// Create our RiveScript interpreter.
-	rs = new RiveScript({
+	let rs = new RiveScript({
 	});
 
 	// This won't work on the web!
 	//rs.loadDirectory("brain");
 
 	// Load our files from the brain/ folder.
-    rs.loadFile("brain/bigbrain.rive").then(onReady).catch(onError);
+    rs.loadFile(["brain/bigbrain.rive"]).then(onReady).catch(onError);
 
 
 	// You can register objects that can then be called

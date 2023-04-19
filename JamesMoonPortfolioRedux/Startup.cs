@@ -29,13 +29,20 @@ namespace JamesMoonPortfolioRedux
             }
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseStaticFiles();
-            app.UseFileServer(new FileServerOptions()
+            app.UseStaticFiles(); // For the wwwroot folder
+
+            app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot/chatbot")),
-                RequestPath = new PathString("/chatbot"),
-                EnableDirectoryBrowsing = true
+                    Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\chatbot")),
+                RequestPath = new PathString("/chatbot")
+            });
+
+            app.UseDirectoryBrowser(new DirectoryBrowserOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\chatbot")),
+                RequestPath = new PathString("/chatbot")
             });
             app.UseAuthorization();
             app.MapRazorPages();
