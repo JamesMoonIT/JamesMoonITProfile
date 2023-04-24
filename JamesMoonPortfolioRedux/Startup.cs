@@ -16,7 +16,6 @@ namespace JamesMoonPortfolioRedux
         {
             services.AddRazorPages();
             services.AddMvc().AddRazorPagesOptions(options => { options.Conventions.AddPageRoute("/Home/Index", ""); });
-            services.AddDirectoryBrowser();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
@@ -30,19 +29,10 @@ namespace JamesMoonPortfolioRedux
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseStaticFiles(); // For the wwwroot folder
-
-            app.UseStaticFiles(new StaticFileOptions()
+            app.UseStaticFiles(new StaticFileOptions
             {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\chatbot")),
-                RequestPath = new PathString("/chatbot")
-            });
-
-            app.UseDirectoryBrowser(new DirectoryBrowserOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\chatbot")),
-                RequestPath = new PathString("/chatbot")
+                ServeUnknownFileTypes = true,
+                DefaultContentType = "text/rive"
             });
             app.UseAuthorization();
             app.MapRazorPages();

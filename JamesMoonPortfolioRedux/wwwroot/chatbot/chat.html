@@ -1,94 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>RiveScript-JS</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="css/chat.css">
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="js/datadumper.js"></script>
-<script type="text/javascript" src="js/rivescript.js"></script>
+    <title>RiveScript-JS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/chat.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/datadumper.js"></script>
+    <script type="text/javascript" src="js/rivescript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
-<fieldset>
-	<legend>Chat Log</legend>
-	<div id="dialogue"></div>
-</fieldset>
+    <fieldset>
+        <legend>Chat Log</legend>
+        <div id="dialogue"></div>
+    </fieldset>
 
-<form onSubmit="return sendMessage()">
-	<fieldset>
-		<legend>Send a Message</legend>
+    <form onSubmit="return sendMessage()">
+        <fieldset>
+            <legend>Send a Message</legend>
 
-		<table class="input-table">
-			<tr>
-				<td class="text-box">
-					<input type="text" size="40" name="message" id="message" autocomplete="off" disabled placeholder="Please wait... loading...">
-				</td>
-				<td class="send-button">
-					<input type="submit" value="Send">
-				</td>
-			</tr>
-		</table>
-	</fieldset>
-</form>
+            <table class="input-table">
+                <tr>
+                    <td class="text-box">
+                        <input type="text" size="40" name="message" id="message" autocomplete="off" disabled placeholder="Please wait... loading...">
+                    </td>
+                    <td class="send-button">
+                        <input type="submit" value="Send">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-// Problem loading rivescript.js?
-	// Create our RiveScript interpreter.
-	let rs = new RiveScript({
-	});
+        const rs = new RiveScript();
 
-	// This won't work on the web!
-	//rs.loadDirectory("brain");
+        rs.loadFile(["brain/begin.rive", "brain/bigbrain.rive"]).then(onReady).catch(onError);
 
-	// Load our files from the brain/ folder.
-    rs.loadFile(["brain/bigbrain.rive"]).then(onReady).catch(onError);
+        function onReady() {
+            $("#dialogue").append("<i><center>Brain loaded</center></i><p></p>");
+            $("#dialogue").append("<div><span class='bot'>Bot:</span> Welcome, this is RiveScript.js v" + rs.version() + ", ready to chat!");
+            $("#message").removeAttr("disabled");
+            $("#message").attr("placeholder", "Send message");
+            $("#message").focus();
 
+            // Now to sort the replies!
+            rs.sortReplies();
+        }
 
-	// You can register objects that can then be called
-	// using <call></call> syntax
-	rs.setSubroutine('fancyJSObject', function(rs, args){
-		// doing complex stuff here
-	});
-	
-function onReady() {
-	$("#dialogue").append("<div><span class='bot'>Bot:</span> Welcome, this is RiveScript.js v" + rs.version() + ", ready to chat!");
-	$("#message").removeAttr("disabled");
-	$("#message").attr("placeholder", "Send message");
-	$("#message").focus();
+        function onError(err, filename, lineno) {
+            $("#dialogue").append('<div><span class="bot">Error:</span> ' + err + '</div>');
+        }
 
-	// Now to sort the replies!
-	rs.sortReplies();
-}
+        // Handle sending a message to the bot.
+        function sendMessage() {
+            var text = $("#message").val();
+            $("#message").val("");
+            $("#dialogue").append("<div><span class='user'>You:</span> " + text + "</div>");
 
-function onError(err, filename, lineno) {
-	$("#dialogue").append('<div><span class="bot">Error:</span> ' + err + '</div>');
-}
+            rs.reply("soandso", text, this).then(function (reply) {
+                reply = reply.replace(/\n/g, "<br>");
+                $("#dialogue").append("<div><span class='bot'>Bot:</span> " + reply + "</div>");
+                $("#dialogue").animate({ scrollTop: $("#dialogue").height() }, 1000);
+            }).catch(function (e) {
+                window.alert(e.message + "\n" + e.line);
+                console.log(e);
+            });
 
-// Handle sending a message to the bot.
-function sendMessage () {
-	var text = $("#message").val();
-	$("#message").val("");
-	$("#dialogue").append("<div><span class='user'>You:</span> " + text + "</div>");
+            return false;
+        }
 
-	rs.reply("soandso", text, this).then(function(reply) {
-		reply = reply.replace(/\n/g, "<br>");
-		$("#dialogue").append("<div><span class='bot'>Bot:</span> " + reply + "</div>");
-		$("#dialogue").animate({ scrollTop: $("#dialogue").height() }, 1000);
-	}).catch(function(e) {
-		window.alert(e.message + "\n" + e.line);
-		console.log(e);
-	});
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
 
-	return false;
-}
-
-function escapeHtml(text) {
-	return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-}
-
-</script>
+    </script>
 
 </body>
 </html>
