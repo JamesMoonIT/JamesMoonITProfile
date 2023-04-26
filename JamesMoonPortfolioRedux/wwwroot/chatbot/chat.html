@@ -34,14 +34,18 @@
     </form>
 
     <script type="text/javascript">
+        $(document).ready(function () {
+            var objDiv = document.getElementById("dialogue");
+            objDiv.scrollTop = objDiv.scrollHeight;
+        });
 
         const rs = new RiveScript();
 
         rs.loadFile(["brain/begin.rive", "brain/bigbrain.rive"]).then(onReady).catch(onError);
 
         function onReady() {
-            $("#dialogue").append("<i><center>Brain loaded</center></i><p></p>");
-            $("#dialogue").append("<div><span class='bot'>Bot:</span> Welcome, this is RiveScript.js v" + rs.version() + ", ready to chat!");
+            $("#dialogue").append("<i><center>Brain loaded successfully</center></i><p></p>");
+            $("#dialogue").append("<div><span class='bot'>TWAIN:</span> Welcome. My name is Technology Without An Interesting Name, or Twain for short. Feel free to ask about me or about James. I'd be very happy to answer any questions you may have.");
             $("#message").removeAttr("disabled");
             $("#message").attr("placeholder", "Send message");
             $("#message").focus();
@@ -62,7 +66,7 @@
 
             rs.reply("soandso", text, this).then(function (reply) {
                 reply = reply.replace(/\n/g, "<br>");
-                $("#dialogue").append("<div><span class='bot'>Bot:</span> " + reply + "</div>");
+                $("#dialogue").append("<div><span class='bot'>MASTER:</span> " + reply + "</div>");
                 $("#dialogue").animate({ scrollTop: $("#dialogue").height() }, 1000);
             }).catch(function (e) {
                 window.alert(e.message + "\n" + e.line);

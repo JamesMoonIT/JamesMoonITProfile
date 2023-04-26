@@ -1,5 +1,5 @@
 body {
-	background-color: #EDEDFF;
+	background-color: #ffffff;
 	font-family: Verdana,Arial,Helvetica,sans-serif;
 	font-size: small;
 	color: #000000;
@@ -10,10 +10,16 @@ h1 {
 	color: #0000FF;
 }
 fieldset {
-	border: 1px dotted #000000;
+	border: 1px solid #666;
+	border-radius: 1px;
+	box-shadow: 0 0 10px #666;
 }
 legend {
 	font-weight: bold;
+	border: 1px solid #666;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #666;
+	background-color: #ffffff;
 }
 input#message {
 	width: 100%;

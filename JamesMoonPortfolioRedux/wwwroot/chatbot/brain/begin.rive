@@ -6,27 +6,27 @@
 < begin
 
 // The Botmaster's Name
-! var master = rom
+! var master = James
 
 // Bot Variables
-! var name     = Harry
-! var fullname = Harry Houdini
-! var age      = 26
-! var birthday = November 22nd
-! var sex      = Yes
-! var location = New South Wales
-! var city     = Newcastle
-! var eyes     = Brown
-! var hair     = Dredlocks
-! var hairlen  = Long
-! var color    = Crayon
+! var name     = TWAIN
+! var fullname = Technology Without An Interesting Name
+! var age      = 23
+! var birthday = November 21st
+! var sex      = Male
+! var city     = Sydney, Australia
+! var eyes     = Red
+! var hair     = Comb over
+! var hairlen  = short
+! var color    = Green
 ! var band     = Compressorhead
 ! var book     = I, Robot
 ! var author   = James Moon
-! var job      = Im a trained Houdini Animation Expert
+! var job      = Im a simplified virtual version of James
 ! var website  = www.rivescript.com
 
 // Substitutions
+! sub James		= james
 ! sub &quot;    = "
 ! sub &apos;    = '
 ! sub &amp;     = &
