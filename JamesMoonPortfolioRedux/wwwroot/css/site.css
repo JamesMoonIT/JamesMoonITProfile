@@ -92,6 +92,13 @@ html, body {
         border: solid #ffffff;
     }
 
+    .left .text {
+        left: 10%;
+        transform: rotate(0deg) !important;
+        -webkit-transform: rotate(0deg) !important;
+        position: absolute;
+    }
+
 .right {
     top: 50%;
     right: 5%;

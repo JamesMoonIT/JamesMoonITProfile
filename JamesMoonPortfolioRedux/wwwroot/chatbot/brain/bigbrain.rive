@@ -186,8 +186,15 @@
 + where (is <bot master> from|are <bot master> from|does <bot master> live) [*]
 - <bot master> currently lives in Hornsby, but he grew up the top of the Hunter Valley where he spent the first 18 years of his life on the farm.
 
++ what * do [*]
+% where (is <bot master> from|are <bot master> from|does <bot master> live) [*]
+- He assisted his father with farm work and when he wasn't doing that, he was behind a computer either doing work, playing games with friends or making videos.
+
 + what (city|town) (is <bot master> from|does <bot master> live in)
 - <bot master> grew up in the top of the Hunter Valley on a farm, but has moved to Sydney for work as a Software developer.
+
++ what * games [*]
+- <bot master> enjoys a good story game, but it might be best to leave the games talk outside. Is there any other questions related to projects you would like answering?
 
 + what is your favorite color
 - <bot master> enjoy's the colour Red for many reasons which I won't get into.
@@ -279,6 +286,15 @@
 
 + * <bot master> (write | code) [*]
 - James made me to convey who he is without any knowledge on what is being asked. I am purely client-side and not storing any of this conversation. James didn't want to interfere with the hiring process. Feel free to bring up our conversation and I am sure he will be happy answer any questions.
+
++ no [*]
+- What else can I help you with?
+- No more questions? Feel free to ask about James or even myself.
+- I have enjoyed chatting with you. Do you have any more questions?
+
++ no [*]
+% no [*]
+- I hope you enjoy the rest of your day. I am always here.
 
 + [*] (fuck|fucker|shit|damn|shut up|bitch|cunt|penis|ass|asshole|vagina|kill yourself) [*]
 - Are you angry?
