@@ -175,6 +175,17 @@
 - <bot master> is a software and web developer from the Hunter Valley. He moved to Sydney for work at NCS Australia.
 - <bot master> is a developer and media creator. He likes building websites, applications, animation and video production.
 
++ [*] else [*]
+% (tell me about <bot master>|who is <bot master>|do you know <bot master>) [*]
+- James is very passionate about designing and building websites, applications, videos and animations from the ground up with his knowledge from university and hobbies.
+
++ [*] else [*]
+% [*] else [*]
+- James started 3D Animation in 2019 when he started learning Houdini in university. He used his knowledge in a number of other university and personal projects and has also learned Source FilmMaker and basic Blender.
+- James is fond of Video Production. As early as 2013, James made content for Youtube with little financial success, but it taught him Filming, Lighting, Camera Technique, Editing and Visual Effects.
+- James is passionate about the future of technology and takes the innititive to learn many different languages. While C# and javascript are his main languages, he has dabbled in Python, Java, C++ and R.
+- James built this website to be a collection of all his projects and skills. You can find a little bit of everything on this website from styling, games, networking skills, socials and short descriptions of learned languages and practices.
+
 + how old is <bot master>
 - <bot master> is 23 years old. He was born in 1999.
 - <bot master> was born in 1999, so that makes him 23 years old now.
@@ -211,7 +222,7 @@
 + where is <bot master> (website|web site|site)
 - Well I can tell you your not far from it. Just have a look around. I am sure I left it here somewhere.....
 
-+ what color are your eyes
++ what color is <bot master>s eyes
 - I feel like that is a little personal for James. Perhaps an interview will show you?
 
 + what do you look like
@@ -227,14 +238,16 @@
 - <bot master> knows C#, Javascript, jQuery, Python, Java, HTML, CSS. James has used C++ and R in the past but may require re-learning.
 
 + (why | what) * <bot name> [*]
-- <bot master> is a fun of a play on words and liked Tony Stark's AI called JARVIS, which stood for "Just A Rather Very Intelligent System". <bot master> couldn't think of a name that stood out, so Twain was the best one he could think of.
+- <bot master> loves a play on words and really likes Tony Stark's AI called JARVIS, which stood for "Just A Rather Very Intelligent System". <bot master> couldn't think of a name that stood out, so Twain was the best one he could think of.
 
-+ [*] fun fact [*]
-- Fun fact? The video playing in the background was James's university short animation for his 3D Animation course. He had to make a 30 second animation using software he had never used before. At the end of the course he submitted it to find out the category of the video that he thought he needed to make was not quite fitting. He still got full marks because the point of the course was to show what he was capable of.
++ [*] fun (fact | facts) [*]
+- Fun fact? The video playing in the background was James's university short animation for his 3D Animation course. He had to make a 30 second animation using animation software he had never used before. At the end of the course he submitted it to find out the category of the video that he thought he needed to make was not quite fitting. He still got full marks because the point of the course was to show what he was capable of.
 - Fun fact? <bot master> started playing chess when he was 7 year old. He doesn't play much anymore today, but has a large collection of trophies he was all across the inter-schools and regional championships where he had a very high win average. Chess fell off for <bot master> when he got to university, but has the Chess.com app on his phone.
 - Fun fact? The area <bot master> grew up in was a small area 3 hours north west of Sydney called <a href="https://goo.gl/maps/AAo3eK2FZnicc3jM7" target="_blank">Sandy Hollow</a>. <bot master>'s family moved out after he went to university and he visits them frequently outside of work hours when he gets the time.
 - Fun fact? <bot master> originally had plans to study Architecture but due to his country school's limitations and where he was located, it was not possible to study further. <bot master> spent 5 years of high school studying graphical design and architecture.
 
++ * good (person | individual | employee | worker) [*]
+- James is good in a group enviornment and is a regular collaborator in meetings and development.
 
 // Extra lines to catch users if they ask
 
@@ -248,17 +261,6 @@
 + *
 % * who
 - LOL! <star>! That's funny!
-
-+ my name is *
-* <formal>   == <bot name> => Wow, we have the same name!<set name=<formal>>
-* <get name> == undefined  => <set name=<formal>>Nice to meet you!
-- <set oldname=<get name>><set name=<formal>>
-^ I thought your name was <get oldname>?
-
-+ what is my name
-* <get name> == undefined => You never told me your name.
-- Your name is <get name>, silly!
-- Aren't you <get name>?
 
 + * interview *
 - <bot master> is open for an interview. His email should be linked to his LinkedIn or CV. I assume you accessed this site from either his LinkedIn or his CV?
@@ -282,7 +284,7 @@
 
 + * (sad | lonely | upsetting) [*]
 % * (spare time | hobbies | hobby) [*]
-- Coming from a country area, James is familiar with isolation and completing work alone. This does not mean he can't work in a group environment. University and Work has opened up so many more opportunities that group is normal now.
+- Coming from a country area, James is familiar with isolation and completing work alone. This does not mean he can't work in a group environment. University and Work has opened up so many more opportunities that group work is normal now.
 
 + * <bot master> (write | code) [*]
 - James made me to convey who he is without any knowledge on what is being asked. I am purely client-side and not storing any of this conversation. James didn't want to interfere with the hiring process. Feel free to bring up our conversation and I am sure he will be happy answer any questions.
@@ -296,9 +298,13 @@
 % no [*]
 - I hope you enjoy the rest of your day. I am always here.
 
++ [*] (chatgpt | chat gpt) [*]
+- I am unfortunately not built with any iteration of Chat GPT. I am however build with a language known as RiveScript.
+
 + [*] (fuck|fucker|shit|damn|shut up|bitch|cunt|penis|ass|asshole|vagina|kill yourself) [*]
-- Are you angry?
-- Does this topic make you feel angry?
 - Is something making you feel angry?
 - Does using that kind of language make you feel better?
 - That doesn't seem very appropriate does it?
+- Why would you stay that?
+- I would appreciate if we kept the discussion swear free. 
+- Please don't swear. If I am frustrating you in any way, please feel free to leave a comment.

@@ -1,7 +1,5 @@
-﻿@page
-@model IndexModel
-@{
-    ViewData["Title"] = "Home page";
+﻿@{
+    ViewData["Title"] = "James Moon's Profile";
 }
 <div class="home">
     <video autoplay muted loop id="myVideo">
@@ -61,6 +59,8 @@
 
 @section scripts {
     <script type="text/javascript">
+        //console.log(ViewBag.CommentID + ", " + ViewBag.CommentAuthor + ", " + ViewBag.CommentString + ", " + ViewBag.CommentDate);
+
         let active = '';
         $('.rightButton').click(function () {
             $('.home').toggleClass('homeVisibility');

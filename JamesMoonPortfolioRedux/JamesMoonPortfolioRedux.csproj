@@ -10,13 +10,9 @@
 
   <ItemGroup>
     <Compile Remove="chatbot\**" />
-    <Compile Remove="Models\**" />
     <Content Remove="chatbot\**" />
-    <Content Remove="Models\**" />
     <EmbeddedResource Remove="chatbot\**" />
-    <EmbeddedResource Remove="Models\**" />
     <None Remove="chatbot\**" />
-    <None Remove="Models\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,8 +30,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.102.36" />
     <PackageReference Include="bootstrap" Version="5.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\data\" />
   </ItemGroup>
 
 </Project>
