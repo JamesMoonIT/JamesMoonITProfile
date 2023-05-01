@@ -1,7 +1,7 @@
-﻿using System.Linq.Expressions;
-using System.Linq;
-using JamesMoonPortfolioRedux.Data.IRepository;
+﻿using JamesMoonPortfolioRedux.Data.IRepository;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+using System.Linq.Dynamic.Core;
 
 namespace JamesMoonPortfolioRedux.Data
 {
