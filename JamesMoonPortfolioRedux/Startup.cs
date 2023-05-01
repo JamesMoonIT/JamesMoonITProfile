@@ -14,8 +14,8 @@ namespace JamesMoonPortfolioRedux
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
             services.AddRazorPages();
-            services.AddMvc().AddRazorPagesOptions(options => { options.Conventions.AddPageRoute("/Home/Index", ""); });
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
@@ -35,6 +35,9 @@ namespace JamesMoonPortfolioRedux
                 DefaultContentType = "text/rive"
             });
             app.UseAuthorization();
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
             app.Run();
         }
