@@ -55,12 +55,15 @@ html, body {
 
 .contentbox {
     position: absolute;
-    border: solid white;
+    border-radius: 10px;
     height: 80vh;
     width: 80vw;
     left: 10%;
     top: 10%;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255, 0.8);
+    -moz-box-shadow: 0 0 30px rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 30px rgb(255, 255, 255);
+    box-shadow: 0 0 30px rgb(255, 255, 255);
 }
 
     .contentbox h1 {
@@ -69,6 +72,10 @@ html, body {
 
     .contentbox p {
         color: black;
+    }
+
+    .contentbox .bottomcontext {
+        height: auto;
     }
 
 .arrow {
@@ -299,3 +306,32 @@ html, body {
     .chat-popup .btn:hover, .open-button:hover {
         opacity: 1;
     }
+
+.comments {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: black;
+    width: 32%;
+    margin-right: 0px;
+    margin-left: auto;
+    overflow: auto;
+}
+
+.leftcontent {
+    width: 64%;
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+.comment-author {
+    padding-right: 20px;
+}
+
+.allcomments {
+    word-wrap: break-word;
+    padding-right: 20px;
+}
+
+.entercomment {
+    padding-right: 20px
+}

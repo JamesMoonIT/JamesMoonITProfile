@@ -1,0 +1,180 @@
+﻿@{
+    ViewData["Title"] = "James Moon's Profile";
+}
+<div class="home">
+    <video autoplay muted loop id="myVideo">
+        <source src="~/img/animation.mp4" type="video/mp4" />
+    </video>
+    <div class="titletext">
+        <p>
+            Welcome to James Moon's Portfolio
+        </p>
+    </div>
+    <div class="leftButton">
+        <p class="">About Me</p>
+        <i class="arrow left"></i>
+    </div>
+    <div class="rightButton">
+        <p class="">Contact Me</p>
+        <i class="arrow right"></i>
+    </div>
+    <div class="bottomButton">
+        <p class="">My Projects</p>
+        <i class="arrow bottom"></i>
+    </div>
+</div>
+
+<div class="rightPage">
+    <div class="contentbox d-flex justify-content-between">
+        <div class="leftcontent">
+            <p class="display-4 text-center">
+                Contact Me
+            </p>
+        </div>
+        <div class="comments">
+            <p>Feel free to leave a comment with your thoughts on my profile. Please do not leave any personal details here as it is open to the public.</p>
+            <div class="entercomment" id="entercomment">
+                <div class="commentAuthor">
+                    <label for="author">Author</label>
+                    <input type="text" maxlength="25" id="author" />
+                </div>
+                <div class="commentString">
+                    <label for="comment">Your Comment</label>-
+                    <input type="text" maxlength="500" id="comment" />
+                </div>
+                <input type="button" id="submitComment" title="Send" value="Send" />
+            </div>
+            <hr />
+            <div class="allcomments" id="allcomments">
+            </div>
+        </div>
+
+    </div>
+    <div class="leftButton">
+        <i class="arrow left"></i>
+    </div>
+</div>
+
+<div class="leftPage">
+    <div class="contentbox">
+        <p>
+            About Me
+        </p>
+    </div>
+    <div class="rightButton">
+        <i class="arrow right"></i>
+    </div>
+</div>
+
+<div class="bottomPage">
+    <div class="contentbox bottomcontext">
+        <p>
+            My Projects
+        </p>
+    </div>
+    <div class="topButton">
+        <i class="arrow top"></i>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        //console.log(ViewBag.CommentID + ", " + ViewBag.CommentAuthor + ", " + ViewBag.CommentString + ", " + ViewBag.CommentDate);
+
+        $(document).ready(function () {
+            GetComments();
+        });
+
+        document.getElementById("submitComment").onclick = function () {
+            var author = document.getElementById("author").value;
+            var comment = document.getElementById("comment").value;
+            console.log(author, comment);
+            $.ajax({
+                url: '@Url.Action("StoreComment", "Home")',
+                data: { 'author': author, 'comment': comment },
+                success: function (data) {
+                    GetComments();
+                },
+                error: function (request, status, error) {
+                    alert(request.responseText);
+                }
+            });
+        };
+
+        function GetComments() {
+            const options = { 
+                year: 'numeric', 
+                month: '2-digit', 
+                day: '2-digit', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                hour12: false, 
+                timeZone: 'Australia/Sydney' 
+            };
+            $.ajax({
+                url: '@Url.Action("GetComments", "Home")',
+                success: function (data) {
+                    var allComments = "";
+                    for (let i = data.length - 1; i > -1; i--) {
+                        var comment = data[i];
+                        allComments += "<div class='comment'><div class='comment-meta'><span class='comment-author'>" + comment["commentAuthor"] + "</span><span class='comment-date'>" + comment["commentDate"] + "</span></div><div class='comment-text'><p'>" + comment["commentString"] + "</p></div></div>";
+                    }
+                    document.getElementById("allcomments").innerHTML = allComments;
+                },
+                error: function (request, status, error) {
+                    alert(request.responseText);
+                }
+            });
+        }
+
+        let active = '';
+        $('.rightButton').click(function () {
+            $('.home').toggleClass('homeVisibility');
+            if (active == '') {
+                active = 'right';
+                $('.rightPage').toggleClass('activeRight');
+            }
+            else if (active == 'left') {
+                active = '';
+                $('.leftPage').toggleClass('activeLeft');
+            }
+            //console.log(active);
+        });
+        $('.leftButton').click(function () {
+            $('.home').toggleClass('homeVisibility');
+            if (active == '') {
+                active = 'left';
+                $('.leftPage').toggleClass('activeLeft');
+            }
+            else if (active == 'right') {
+                active = '';
+                $('.rightPage').toggleClass('activeRight');
+            }
+            //console.log(active);
+        });
+        $('.bottomButton').click(function () {
+            $('.home').toggleClass('homeVisibility');
+            if (active == '') {
+                active = 'bottom';
+                $('.bottomPage').toggleClass('activeBottom');
+            }
+            else if (active == 'top') {
+                active = '';
+                $('.topPage').toggleClass('activetop');
+            }
+            //console.log(active);
+        });
+        $('.topButton').click(function () {
+            $('.home').toggleClass('homeVisibility');
+            if (active == '') {
+                active = 'top';
+                $('.topPage').toggleClass('activeTop');
+            }
+            else if (active == 'bottom') {
+                active = '';
+                $('.bottomPage').toggleClass('activeBottom');
+            }
+            //console.log(active);
+        });
+    </script>
+}

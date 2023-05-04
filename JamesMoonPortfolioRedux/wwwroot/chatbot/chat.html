@@ -66,7 +66,7 @@
 
             rs.reply("soandso", text, this).then(function (reply) {
                 reply = reply.replace(/\n/g, "<br>");
-                $("#dialogue").append("<div><span class='bot'>MASTER:</span> " + reply + "</div>");
+                $("#dialogue").append("<div><span class='bot'>TWAIN:</span> " + reply + "</div>");
                 $("#dialogue").animate({ scrollTop: $("#dialogue").height() }, 1000);
             }).catch(function (e) {
                 window.alert(e.message + "\n" + e.line);

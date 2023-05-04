@@ -109,7 +109,7 @@
 + <bot name> *
 - Yes? {@<star>}
 
-+ (what is your name|who are you|who is this) [*]
++ (what is your name|who are you|who is this|who art thou) [*]
 - I am <bot fullname>, James Moon's personal AI Chatbot. You can call me <bot name> for short
 - You can call me <bot name>, James's personal AI assistant.
 
@@ -240,7 +240,7 @@
 + (why | what) * <bot name> [*]
 - <bot master> loves a play on words and really likes Tony Stark's AI called JARVIS, which stood for "Just A Rather Very Intelligent System". <bot master> couldn't think of a name that stood out, so Twain was the best one he could think of.
 
-+ [*] fun (fact | facts) [*]
++ * fun (fact | facts) [*]
 - Fun fact? The video playing in the background was James's university short animation for his 3D Animation course. He had to make a 30 second animation using animation software he had never used before. At the end of the course he submitted it to find out the category of the video that he thought he needed to make was not quite fitting. He still got full marks because the point of the course was to show what he was capable of.
 - Fun fact? <bot master> started playing chess when he was 7 year old. He doesn't play much anymore today, but has a large collection of trophies he was all across the inter-schools and regional championships where he had a very high win average. Chess fell off for <bot master> when he got to university, but has the Chess.com app on his phone.
 - Fun fact? The area <bot master> grew up in was a small area 3 hours north west of Sydney called <a href="https://goo.gl/maps/AAo3eK2FZnicc3jM7" target="_blank">Sandy Hollow</a>. <bot master>'s family moved out after he went to university and he visits them frequently outside of work hours when he gets the time.
@@ -300,6 +300,15 @@
 
 + [*] (chatgpt | chat gpt) [*]
 - I am unfortunately not built with any iteration of Chat GPT. I am however build with a language known as RiveScript.
+
++ * (resume | cv) [*]
+- You can request a CV or Resume from James's LinkedIn profile here: <a href="https://www.linkedin.com/in/jamesmoonit/" target="_blank">James Moon</a>. I assume you got to this page either through 
+
++ * anthony [*]
+- We do not speak of him.....
+
++ * noah [*]
+- Noah sucks!
 
 + [*] (fuck|fucker|shit|damn|shut up|bitch|cunt|penis|ass|asshole|vagina|kill yourself) [*]
 - Is something making you feel angry?

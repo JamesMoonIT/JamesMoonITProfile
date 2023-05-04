@@ -1,3 +1,1 @@
-{
-  "Comment":  [ {"CommentID": "1", "CommentAuthor": "Comment Author", "CommentString": "My Comment is the best comment in the world. The quick brown fox jumped over the lazy dog.", "CommentDate": "2012-01-26T13:51:50.417-07:00"} ]
-}
+[{"CommentID":2,"CommentAuthor":"James","CommentString":"Test comment","CommentDate":"3/05/2023 11:28 AM"},{"CommentID":3,"CommentAuthor":"New Comment","CommentString":"Heyooooo","CommentDate":"4/05/2023 11:18 AM"}]
