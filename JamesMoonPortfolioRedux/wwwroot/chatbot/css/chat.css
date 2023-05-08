@@ -11,13 +11,13 @@ h1 {
 }
 fieldset {
 	border: 1px solid #666;
-	border-radius: 1px;
+	border-radius: 10px;
 	box-shadow: 0 0 10px #666;
 }
 legend {
 	font-weight: bold;
 	border: 1px solid #666;
-	border-radius: 5px;
+	border-radius: 2px;
 	box-shadow: 0 0 10px #666;
 	background-color: #ffffff;
 }

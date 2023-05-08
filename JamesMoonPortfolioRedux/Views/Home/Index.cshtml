@@ -1,26 +1,30 @@
 ﻿@{
     ViewData["Title"] = "James Moon's Profile";
 }
-<div class="home">
+<div class="home" id="home">
+    <div class="adminpanel">
+        <input type="button" value="Pop Titles" name="PopTitles" onclick="PopTitles()" />
+    </div>
     <video autoplay muted loop id="myVideo">
         <source src="~/img/animation.mp4" type="video/mp4" />
     </video>
     <div class="titletext">
         <p>
-            Welcome to James Moon's Portfolio
+            @*Welcome to James Moon's Portfolio*@
+            Test
         </p>
     </div>
-    <div class="leftButton">
-        <p class="">About Me</p>
-        <i class="arrow left"></i>
+    <p class="navtext navtext-right" id="navtext-right">Contact Me</p>
+    <p class="navtext navtext-left" id="navtext-left">About Me</p>
+    <p class="navtext navtext-bottom" id="navtext-bottom">My Projects</p>
+    <div class="leftButton justify-content-between" id="leftbutton">
+        <i class="arrow arrow-left" id="leftarrow"></i>
     </div>
-    <div class="rightButton">
-        <p class="">Contact Me</p>
-        <i class="arrow right"></i>
+    <div class="rightButton justify-content-between" id="rightbutton">
+        <i class="arrow arrow-right" id="rightarrow"></i>
     </div>
-    <div class="bottomButton">
-        <p class="">My Projects</p>
-        <i class="arrow bottom"></i>
+    <div class="bottomButton justify-content-between" id="bottombutton">
+        <i class="arrow arrow-bottom" id="bottomarrow"></i>
     </div>
 </div>
 
@@ -33,25 +37,25 @@
         </div>
         <div class="comments">
             <p>Feel free to leave a comment with your thoughts on my profile. Please do not leave any personal details here as it is open to the public.</p>
-            <div class="entercomment" id="entercomment">
+            <div class="entercomment justify-content-end" id="entercomment">
                 <div class="commentAuthor">
                     <label for="author">Author</label>
                     <input type="text" maxlength="25" id="author" />
                 </div>
                 <div class="commentString">
-                    <label for="comment">Your Comment</label>-
+                    <label for="comment">Your Comment</label>
                     <input type="text" maxlength="500" id="comment" />
                 </div>
                 <input type="button" id="submitComment" title="Send" value="Send" />
             </div>
             <hr />
-            <div class="allcomments" id="allcomments">
+            <div class="allcomments justify-content-end" id="allcomments">
             </div>
         </div>
 
     </div>
-    <div class="leftButton">
-        <i class="arrow left"></i>
+    <div class="leftButton justify-content-between" id="leftbutton">
+        <i class="arrow arrow-left" id="leftarrow"></i>
     </div>
 </div>
 
@@ -61,8 +65,8 @@
             About Me
         </p>
     </div>
-    <div class="rightButton">
-        <i class="arrow right"></i>
+    <div class="rightButton justify-content-between" id="rightbutton">
+        <i class="arrow arrow-right" id="rightarrow"></i>
     </div>
 </div>
 
@@ -72,8 +76,8 @@
             My Projects
         </p>
     </div>
-    <div class="topButton">
-        <i class="arrow top"></i>
+    <div class="topButton justify-content-between" id="topbutton">
+        <i class="arrow arrow-top" id="toparrow"></i>
     </div>
 </div>
 
@@ -102,14 +106,14 @@
         };
 
         function GetComments() {
-            const options = { 
-                year: 'numeric', 
-                month: '2-digit', 
-                day: '2-digit', 
-                hour: '2-digit', 
-                minute: '2-digit', 
-                hour12: false, 
-                timeZone: 'Australia/Sydney' 
+            const options = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+                timeZone: 'Australia/Sydney'
             };
             $.ajax({
                 url: '@Url.Action("GetComments", "Home")',
@@ -176,5 +180,38 @@
             }
             //console.log(active);
         });
+
+        const leftButton = document.getElementById('leftbutton');
+        const rightButton = document.getElementById('rightbutton');
+        const bottomButton = document.getElementById('bottombutton');
+        const leftArrow = document.getElementById('leftarrow');
+        const rightArrow = document.getElementById('rightarrow');
+        const bottomArrow = document.getElementById('bottomarrow');
+
+        leftButton.addEventListener('mouseover', function handleMouseOver() {
+            $('.navtext-left').toggleClass('activenavtext-left');
+        });
+        rightButton.addEventListener('mouseover', function handleMouseOver() {
+            $('.navtext-right').toggleClass('activenavtext-right');
+        });
+        bottomButton.addEventListener('mouseover', function handleMouseOver() {
+            $('.navtext-bottom').toggleClass('activenavtext-bottom');
+        });
+
+        leftButton.addEventListener('mouseout', function handleMouseOver() {
+            $('.navtext-left').toggleClass('activenavtext-left');
+        });
+        rightButton.addEventListener('mouseout', function handleMouseOver() {
+            $('.navtext-right').toggleClass('activenavtext-right');
+        });
+        bottomButton.addEventListener('mouseout', function handleMouseOver() {
+            $('.navtext-bottom').toggleClass('activenavtext-bottom');
+        });
+
+        function PopTitles() {
+            $('.navtext-right').toggleClass('activenavtext-right');
+            $('.navtext-bottom').toggleClass('activenavtext-bottom');
+            $('.navtext-left').toggleClass('activenavtext-left');
+        }
     </script>
 }

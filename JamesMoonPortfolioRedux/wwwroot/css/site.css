@@ -15,6 +15,10 @@ html, body {
     transition: all 2s;
 }
 
+.textVisibility {
+    transition: all 2s;
+}
+
 #myVideo {
     position: fixed;
     right: 0;
@@ -55,7 +59,7 @@ html, body {
 
 .contentbox {
     position: absolute;
-    border-radius: 10px;
+    border-radius: 1px;
     height: 80vh;
     width: 80vw;
     left: 10%;
@@ -66,17 +70,26 @@ html, body {
     box-shadow: 0 0 30px rgb(255, 255, 255);
 }
 
-    .contentbox h1 {
-        color: black
+@media (max-width: 768px) {
+    .contentbox {
+        height: 90vh;
+        width: 90vw;
+        left: 5%;
+        top: 5%;
     }
+}
 
-    .contentbox p {
-        color: black;
-    }
+.contentbox h1 {
+    color: black
+}
 
-    .contentbox .bottomcontext {
-        height: auto;
-    }
+.contentbox p {
+    color: black;
+}
+
+.contentbox .bottomcontext {
+    height: auto;
+}
 
 .arrow {
     border: solid #232323;
@@ -86,58 +99,109 @@ html, body {
     color: #f00;
     position: absolute;
     opacity: 1;
+    width: 50px;
+    height: 50px;
 }
 
-.left {
+.arrow-left {
     top: 50%;
     left: 5%;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
 
-    .left:hover {
-        border: solid #ffffff;
+    .arrow-left:hover {
+        color: white;
     }
 
-    .left .text {
-        left: 10%;
-        transform: rotate(0deg) !important;
-        -webkit-transform: rotate(0deg) !important;
-        position: absolute;
-    }
-
-.right {
+.arrow-right {
     top: 50%;
     right: 5%;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
 
-    .right:hover {
-        border: solid #ffffff;
+    .arrow-right:hover {
+        color: white;
     }
 
-.bottom {
+.arrow-bottom {
     bottom: 5%;
     right: 50%;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
 
-    .bottom:hover {
-        border: solid #ffffff;
+    .arrow-bottom:hover {
+        color: white;
     }
 
-.top {
+.arrow-top {
     top: 5%;
     right: 50%;
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
 }
 
-    .top:hover {
-        border: solid #ffffff;
+    .arrow-top:hover {
+        color: white;
     }
+
+.navtext {
+    font-size: 1rem;
+    font-size: 5vw;
+    color: dimgrey;
+    position: absolute;
+    text-align: center;
+    transition: all 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navtext-left {
+    top: 50%;
+    left: -100%;
+    margin: 0;
+    transform: translate(30%, -30%);
+    text-align: center;
+}
+
+.navtext-right {
+    top: 50%;
+    right: -100%;
+    margin: 0;
+    transform: translate(-20%, -25%);
+    text-align: center;
+}
+
+.navtext-top {
+    top: -100%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-20%, -40%);
+    text-align: center;
+}
+
+.navtext-bottom {
+    bottom: -100%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-60%, -50%);
+    text-align: center;
+}
+
+.activenavtext-left {
+    left: 0;
+}
+
+.activenavtext-right {
+    right: 0;
+}
+
+.activenavtext-bottom {
+    bottom: 0;
+}
 
 .rightPage {
     height: 100%;
@@ -261,6 +325,7 @@ html, body {
     color: white;
     padding: 5px 5px;
     border: 3px solid #000;
+    border-radius: 50px;
     cursor: pointer;
     position: fixed;
     bottom: 20px;
@@ -334,4 +399,20 @@ html, body {
 
 .entercomment {
     padding-right: 20px
+}
+
+.hide {
+    display: none;
+}
+
+.adminpanel {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
 }

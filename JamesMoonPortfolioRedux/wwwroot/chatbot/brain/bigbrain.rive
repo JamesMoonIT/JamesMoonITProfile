@@ -249,6 +249,10 @@
 + * good (person | individual | employee | worker) [*]
 - James is good in a group enviornment and is a regular collaborator in meetings and development.
 
++ how is <bot master> [*]
+- <bot master> has been very well. This website has taken a lot of time to finish and the fact you are seeing it means it has been completed. Apart from that, he is working hard to upskilling himself with new and emerging technology practices regarding web development, networking and software development.
+- <bot master> is working through many IT related problems and fixes. <bot master> loves a challenge.
+
 // Extra lines to catch users if they ask
 
 + knock knock
@@ -304,12 +308,14 @@
 + * (resume | cv) [*]
 - You can request a CV or Resume from James's LinkedIn profile here: <a href="https://www.linkedin.com/in/jamesmoonit/" target="_blank">James Moon</a>. I assume you got to this page either through 
 
+// These two are small easter eggs
 + * anthony [*]
 - We do not speak of him.....
 
 + * noah [*]
 - Noah sucks!
 
+// This is required..... As the intention of this site is to advertise myself to an employer, it does have to catch the odd unhinged user.
 + [*] (fuck|fucker|shit|damn|shut up|bitch|cunt|penis|ass|asshole|vagina|kill yourself) [*]
 - Is something making you feel angry?
 - Does using that kind of language make you feel better?
