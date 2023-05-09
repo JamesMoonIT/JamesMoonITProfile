@@ -8,6 +8,16 @@ html, body {
     background-color: black;
 }
 
+@font-face {
+    font-family: "Roboto";
+    src: url("../lib/fonts/roboto-light/roboto-light.woff") format('woff');
+}
+
+@font-face {
+    font-family: "RobotoBold";
+    src: url("../lib/fonts/roboto-bold/roboto-bold.woff") format('woff');
+}
+
 .homeVisibility {
     height: 100%;
     width: 100%;
@@ -44,7 +54,7 @@ html, body {
 }
 
     .titletext p {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'MS Reference Sans Serif', sans-serif;
         font-weight: 900;
         text-transform: uppercase;
         margin: 0;
@@ -85,6 +95,16 @@ html, body {
 
 .contentbox p {
     color: black;
+}
+
+.contenttitle {
+    font-family: RobotoBold, Arial, Helvetica, sans-serif;
+}
+
+.contenttext {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .contentbox .bottomcontext {

@@ -308,7 +308,10 @@
 + * (resume | cv) [*]
 - You can request a CV or Resume from James's LinkedIn profile here: <a href="https://www.linkedin.com/in/jamesmoonit/" target="_blank">James Moon</a>. I assume you got to this page either through 
 
-// These two are small easter eggs
++ * (comment | comments) [*]
+- <bot master> build the comments section using some very basic json strings. It was originally intended to be hosted on a db, but due to networking issues and keeping expenses low, this alternative is more efficient for what it is storing.
+
+// These two are small easter eggs. Shout out to Anthony and Noah, two friends I use to study with while at University.
 + * anthony [*]
 - We do not speak of him.....
 
