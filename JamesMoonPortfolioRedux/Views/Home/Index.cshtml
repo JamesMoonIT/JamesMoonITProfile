@@ -10,7 +10,8 @@
     </video>
     <div class="titletext">
         <p>
-            Welcome to James Moon's Portfolio
+            <!-- Welcome to James Moon's Portfolio -->
+            Test
         </p>
     </div>
     <p class="navtext navtext-right" id="navtext-right">Contact Me</p>
@@ -92,7 +93,6 @@
         document.getElementById("submitComment").onclick = function () {
             var author = document.getElementById("author").value;
             var comment = document.getElementById("comment").value;
-            console.log(author, comment);
             $.ajax({
                 url: '@Url.Action("StoreComment", "Home")',
                 data: { 'author': author, 'comment': comment },
@@ -100,7 +100,8 @@
                     GetComments();
                 },
                 error: function (request, status, error) {
-                    alert(request.responseText);
+                    var responseText = request.responseText.split("\n")[0];
+                    alert(responseText);
                 }
             });
         };
@@ -126,7 +127,8 @@
                     document.getElementById("allcomments").innerHTML = allComments;
                 },
                 error: function (request, status, error) {
-                    alert(request.responseText);
+                    var responseText = request.responseText.split("\n")[0];
+                    alert(responseText);
                 }
             });
         }

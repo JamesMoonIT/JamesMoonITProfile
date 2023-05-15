@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text.Json;
+using ProfanityFilter;
 
 namespace JamesMoonPortfolioRedux.Controllers
 {
@@ -10,14 +11,14 @@ namespace JamesMoonPortfolioRedux.Controllers
     {
         private readonly string filepath = @".\wwwroot\data\Comment.json";
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return View();
         }
 
         public List<Comment> GetComments()
         {
-            List<Comment> comments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(System.IO.File.ReadAllText(filepath));
+            List<Comment> comments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(System.IO.File.ReadAllText(filepath)) ?? new List<Comment>();
             return comments;
         }
 
@@ -26,27 +27,56 @@ namespace JamesMoonPortfolioRedux.Controllers
             List<Comment> allcomments = GetComments();
             if (author.Length > 25 || comment.Length > 500) 
             {
-                throw new Exception("Character limit breached. Don't try breaking my website!");
+                // should never hit because of front end, but incase someone thinks they can break my website.
+                throw new Exception("Character limit breached. Don't try to be smart and break my site in Developer Tools!");
             }
-            int highest = 1;
-            foreach (var com in allcomments)
+            bool valid = ValidateComment(author, comment);
+            if (valid)
             {
-                if (com.CommentID > highest)
+                int highest = 1;
+                foreach (var com in allcomments)
                 {
-                    highest = com.CommentID;
+                    if (com.CommentID > highest)
+                    {
+                        highest = com.CommentID;
+                    }
                 }
+                allcomments.Add(
+                    new Comment
+                    {
+                        CommentID = highest + 1,
+                        CommentAuthor = author,
+                        CommentString = comment,
+                        CommentDate = DateTime.Now.ToString("g")
+                    }
+                );
+                System.IO.File.WriteAllText(filepath, JsonConvert.SerializeObject(allcomments));
             }
-            allcomments.Add(
-                new Comment
-                {
-                    CommentID = highest + 1,
-                    CommentAuthor = author,
-                    CommentString = comment,
-                    CommentDate = DateTime.Now.ToString("g")
-                }
-            );
-            System.IO.File.WriteAllText(filepath, JsonConvert.SerializeObject(allcomments));
             return GetComments();
-        } 
+        }
+
+        private bool ValidateComment(string author, string comment)
+        {
+            int score = 0;
+            // 1. If character limit is breached manually
+            if (author.Length > 25 || comment.Length > 500)
+            {
+                // should never hit because of front end, but incase someone thinks they can break my website.
+                throw new CustomException("Character limit breached. Don't try to be smart and break my site in Developer Tools!");
+            }
+            // 2. If profanity detected
+            var filter = new ProfanityFilter.ProfanityFilter();
+            // 2.1. If author is profanity
+            if (filter.ContainsProfanity(author))
+            {
+                throw new CustomException("Author name contains profanity. Please refrain from posting this in the comments.");
+            }
+            //2.2. If comment contains profanity
+            if (filter.ContainsProfanity(comment))
+            {
+                throw new CustomException("Comment contains profanity. Please refrain from posting this in the comments.");
+            }
+            if (score > 0) { return true; } else { return false; }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using JamesMoonPortfolioRedux.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.FileProviders;
 
 namespace JamesMoonPortfolioRedux

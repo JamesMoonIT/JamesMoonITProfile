@@ -29,6 +29,10 @@ div#dialogue {
 	height: 300px;
 	width: 100%;
 }
+#anchor {
+	overflow-anchor: auto;
+	height: 1px;
+}
 div#debug {
 	overflow: auto;
 	max-height: 450px;

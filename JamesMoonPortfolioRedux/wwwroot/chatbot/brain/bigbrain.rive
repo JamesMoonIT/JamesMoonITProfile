@@ -1,5 +1,19 @@
 ﻿! version = 2.0
 
+// User tools. These can be called when a use has a problem with the bot.
++ [*] help
+- You can ask me a number of questions like:\n
+^ - What is James's favourite book?\n
+^ - Where is James from?\n
+^ - What qualifications does James have?\n
+^ - Fun fact about James\n
+^ - How is this bot built?\n
+^ As well as a number of other commands. Think of this bot as a person and just ask away.
+
++ (hi | hello | howdy | gday | morning | evening | greetings) [*]
+- Pleasure to meet you.
+- Hi there. How can I help you?
+
 // Learn stuff about our users.
 + my name is *
 - <set name=<formal>>Nice to meet you, <get name>.
@@ -82,36 +96,36 @@
 - <set myname=<star>>Nice to meet you, <get name>.
 
 + * my name
-* <get name> == undefined => Perhaps you should tell me your name first.
+* <get myname> == undefined => Perhaps you should tell me your name first.
 - Your name is <get myname>.
+- Aren't you <get myname>?
 
 + * your name
-- I'm Twain, James's personal AI bot (no affiliation)
+- I'm Twain, James's personal AI bot. It was going to be JARVIS, but I guess thats already taken.
 
-+ * like your name
++ * [like] * name * [cool | cute] [*]
 - It could be improved, but its better than just being called Robot, Chatbot or Bot.
 
 + * hate *
 * <get name> == undefined => That's a little harsh, don't you think?
 - That's a little harsh, don't you think <get myname>?
 
-+ *
-- I'm sorry, I don't quite understand. Is it possible to rephrase your question?
-- Is it possible to re-word that question?
-- I'm sorry, could you possible rephrase the question?
-- I'm having trouble understanding your question. Could you try to word it in a different manor?
++ you know [what | what *]
+- I don't know.
 
-// Tell the user stuff about ourself.
+// Tell the user stuff about the chatbot.
 
 + <bot name>
 - Yes?
-
-+ <bot name> *
-- Yes? {@<star>}
+- You called?
 
 + (what is your name|who are you|who is this|who art thou) [*]
-- I am <bot fullname>, James Moon's personal AI Chatbot. You can call me <bot name> for short
+- I am <bot fullname>, James Moon's personal AI Chatbot.
 - You can call me <bot name>, James's personal AI assistant.
+
++ how are you
+- I am well, but I guess its hard to tell being an AI.
+- I am doing fairly well today. Just been browsing 
 
 + how old are you [*]
 - I was created in 2023, but was originally conceptualised in 2019 when James learned how to build AI chatbots.
@@ -138,11 +152,14 @@
 + what is your favorite book [*]
 - I'm mostly reading the compiler and brain files by James, but I can tell you I'm facinated by James's reads like <bot book>.
 
-+ what is your occupation [*]
++ what is your (occupation | job | purpose) [*]
 - I'm a personal assistant for James, but I also aid here on James's Portfolio for anyone willing to learn about James.
 
-+ where is your (website|web site|site)
++ where is your (website|web site|site) [*]
 - You can learn about how I am created through <bot website>
+
++ how * make (you | yourself) [*]
+- My responses are fed to me by James, but my core is powered by Rivescript.
 
 + what color are your eyes [*]
 - I do not have physical eyes, but in an animation project James worked on, he created a robot with one <bot eyes> eye.
@@ -169,22 +186,7 @@
 - Yes? What about <bot master>?
 
 + <bot master> *
-- Yes? {@<star>}
-
-+ (tell me about <bot master>|who is <bot master>|do you know <bot master>) [*]
-- <bot master> is a software and web developer from the Hunter Valley. He moved to Sydney for work at NCS Australia.
-- <bot master> is a developer and media creator. He likes building websites, applications, animation and video production.
-
-+ [*] else [*]
-% (tell me about <bot master>|who is <bot master>|do you know <bot master>) [*]
-- James is very passionate about designing and building websites, applications, videos and animations from the ground up with his knowledge from university and hobbies.
-
-+ [*] else [*]
-% [*] else [*]
-- James started 3D Animation in 2019 when he started learning Houdini in university. He used his knowledge in a number of other university and personal projects and has also learned Source FilmMaker and basic Blender.
-- James is fond of Video Production. As early as 2013, James made content for Youtube with little financial success, but it taught him Filming, Lighting, Camera Technique, Editing and Visual Effects.
-- James is passionate about the future of technology and takes the innititive to learn many different languages. While C# and javascript are his main languages, he has dabbled in Python, Java, C++ and R.
-- James built this website to be a collection of all his projects and skills. You can find a little bit of everything on this website from styling, games, networking skills, socials and short descriptions of learned languages and practices.
+- Yes? {@<star>}.
 
 + how old is <bot master>
 - <bot master> is 23 years old. He was born in 1999.
@@ -201,19 +203,19 @@
 % where (is <bot master> from|are <bot master> from|does <bot master> live) [*]
 - He assisted his father with farm work and when he wasn't doing that, he was behind a computer either doing work, playing games with friends or making videos.
 
-+ what (city|town) (is <bot master> from|does <bot master> live in)
++ [*] [(city|town)] (is <bot master> from|does <bot master> live in) [*]
 - <bot master> grew up in the top of the Hunter Valley on a farm, but has moved to Sydney for work as a Software developer.
 
 + what * games [*]
 - <bot master> enjoys a good story game, but it might be best to leave the games talk outside. Is there any other questions related to projects you would like answering?
 
-+ what is your favorite color
++ what is <bot master> favorite color
 - <bot master> enjoy's the colour Red for many reasons which I won't get into.
 
 + what is <bot master> favorite (band | song | music)
 - <bot master> listens to many types of music including Techno, EDM and Trance all the way to Swing, Jazz and Blues.
 
-+ what is <bot master> favorite book
++ what is <bot master> (favorite | favourite) book [*]
 - <bot master> enjoys the Lord of the Ring's books. He hasn't read them yet, but has seen the movies many times and watched videos about the books.
 
 + what is <bot master> (occupation | job)
@@ -225,7 +227,7 @@
 + what color is <bot master>s eyes
 - I feel like that is a little personal for James. Perhaps an interview will show you?
 
-+ what do you look like
++ what (do | does) <bot master> look like [*]
 - I enjoy learning and working with James on projects. My next iteration is Machine-Learning, but its a long term goal in terms of responsiveness and knowledge.
 
 + what do you do [*]
@@ -235,12 +237,12 @@
 - I do not have a favourite author, but a facinating author I learned of is William Gibson who wrote the book Neuromancer. Very interesting concepts.
 
 + [*] (language | languages) [*]
-- <bot master> knows C#, Javascript, jQuery, Python, Java, HTML, CSS. James has used C++ and R in the past but may require re-learning.
+- <bot master> knows C#, Javascript, jQuery, Python, Java, HTML, CSS. James has used C++ and R in the past but would be happy refamiliarizing it should it be needed.
 
 + (why | what) * <bot name> [*]
 - <bot master> loves a play on words and really likes Tony Stark's AI called JARVIS, which stood for "Just A Rather Very Intelligent System". <bot master> couldn't think of a name that stood out, so Twain was the best one he could think of.
 
-+ * fun (fact | facts) [*]
++ [*] fun (fact | facts) [*]
 - Fun fact? The video playing in the background was James's university short animation for his 3D Animation course. He had to make a 30 second animation using animation software he had never used before. At the end of the course he submitted it to find out the category of the video that he thought he needed to make was not quite fitting. He still got full marks because the point of the course was to show what he was capable of.
 - Fun fact? <bot master> started playing chess when he was 7 year old. He doesn't play much anymore today, but has a large collection of trophies he was all across the inter-schools and regional championships where he had a very high win average. Chess fell off for <bot master> when he got to university, but has the Chess.com app on his phone.
 - Fun fact? The area <bot master> grew up in was a small area 3 hours north west of Sydney called <a href="https://goo.gl/maps/AAo3eK2FZnicc3jM7" target="_blank">Sandy Hollow</a>. <bot master>'s family moved out after he went to university and he visits them frequently outside of work hours when he gets the time.
@@ -251,20 +253,25 @@
 
 + how is <bot master> [*]
 - <bot master> has been very well. This website has taken a lot of time to finish and the fact you are seeing it means it has been completed. Apart from that, he is working hard to upskilling himself with new and emerging technology practices regarding web development, networking and software development.
-- <bot master> is working through many IT related problems and fixes. <bot master> loves a challenge.
+- <bot master> is working through many IT related problems and fixes at NCS Australia. <bot master> loves a code and design challenge.
+
++ (tell me about <bot master>|who is <bot master>|do you know <bot master>) [*]
+- <bot master> is a software and web developer from the Hunter Valley. He moved to Sydney for work at NCS Australia.
+- <bot master> is a developer and media creator. He likes building websites, applications, animation and video production.
+
++ [*] else [*]
+% james is a software and web developer from the hunter valley he moved to sydney for work at ncs australia
+- James is very passionate about designing and building websites, applications, videos and animations from the ground up with his knowledge from university and hobbies.
+
++ [*] else [*]
+% james is very passionate about designing and building websites applications videos and animations from the ground up with his knowledge from university and hobbies
+- James started 3D Animation in 2019 when he started learning Houdini in university. He used his knowledge in a number of other university and personal projects and has also learned Source FilmMaker and basic Blender.
+- James is fond of Video Production. As early as 2013, James made content for Youtube with little financial success, but it taught him Filming, Lighting, Camera Technique, Editing and Visual Effects.
+- James is passionate about the future of technology and takes the innititive to learn many different languages. While C# and javascript are his main languages, he has dabbled in Python, Java, C++ and R.
+- James built this website to be a collection of all his projects and skills. You can find a little bit of everything on this website from styling, games, networking skills, socials and short descriptions of learned languages and practices.
+
 
 // Extra lines to catch users if they ask
-
-+ knock knock
-- Who's there?
-
-+ *
-% who is there
-- <star> who?
-
-+ *
-% * who
-- LOL! <star>! That's funny!
 
 + * interview *
 - <bot master> is open for an interview. His email should be linked to his LinkedIn or CV. I assume you accessed this site from either his LinkedIn or his CV?
@@ -290,8 +297,8 @@
 % * (spare time | hobbies | hobby) [*]
 - Coming from a country area, James is familiar with isolation and completing work alone. This does not mean he can't work in a group environment. University and Work has opened up so many more opportunities that group work is normal now.
 
-+ * <bot master> (write | code) [*]
-- James made me to convey who he is without any knowledge on what is being asked. I am purely client-side and not storing any of this conversation. James didn't want to interfere with the hiring process. Feel free to bring up our conversation and I am sure he will be happy answer any questions.
++ why did <bot master> (write | code | make) you [*]
+- James made me to convey who he is without any knowledge on what is being asked. I am purely client-side and not storing any of this conversation. James didn't want to interfere with this process. Feel free to bring up our conversation and I am sure he will be happy answer any questions.
 
 + no [*]
 - What else can I help you with?
@@ -299,7 +306,7 @@
 - I have enjoyed chatting with you. Do you have any more questions?
 
 + no [*]
-% no [*]
+% i have enjoyed chatting with you do you have any more questions
 - I hope you enjoy the rest of your day. I am always here.
 
 + [*] (chatgpt | chat gpt) [*]
@@ -326,3 +333,8 @@
 - Why would you stay that?
 - I would appreciate if we kept the discussion swear free. 
 - Please don't swear. If I am frustrating you in any way, please feel free to leave a comment.
+
++ * 
+- I'm not sure how to reply to that. Could you perhaps be more specific with your question?
+- I don't know how to reply to that. Would you mind rephrasing it?
+- I don't understand what you mean by that. I am limited by my responses so would you mind rewording your question?
