@@ -80,6 +80,19 @@ html, body {
     box-shadow: 0 0 30px rgb(255, 255, 255);
 }
 
+.contentboxlong {
+    position: absolute;
+    border-radius: 1px;
+    width: 80vw;
+    left: 10%;
+    top: 10%;
+    overflow: auto;
+    background-color: rgb(255, 255, 255, 0.8);
+    -moz-box-shadow: 0 0 30px rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 30px rgb(255, 255, 255);
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+}
+
 @media (max-width: 768px) {
     .contentbox {
         height: 90vh;
@@ -93,7 +106,15 @@ html, body {
     color: black
 }
 
+.contentboxlong h1 {
+    color: black
+}
+
 .contentbox p {
+    color: black;
+}
+
+.contentboxlong p {
     color: black;
 }
 
@@ -107,8 +128,9 @@ html, body {
     margin-right: 20px;
 }
 
-.contentbox .bottomcontext {
-    height: auto;
+.contentboxlong .bottomcontext {
+    height: 100%;
+    overflow: scroll;
 }
 
 .arrow {
@@ -435,4 +457,63 @@ html, body {
     align-items: center;
     justify-content: center;
     z-index: 10;
+}
+
+.projects {
+    height: auto;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.project {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.leftproject {
+    padding: 30px;
+    width: 50%;
+    left: 0;
+}
+
+.rightproject {
+    padding: 30px;
+    width: 50%;
+    right: 0;
+}
+
+.projectimage {
+    width: 100%;
+    height: auto;
+}
+
+.scrollable {
+    overflow: auto;
+}
+
+    .scrollable::-webkit-scrollbar {
+        width: 0px;
+        background-color: transparent;
+    }
+
+.spacer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.shadowdemon {
+    position: absolute;
+    bottom: 0;
+    color: transparent;
+    box-shadow: none;
+}
+
+.absolutecenter {
+    display: flex;
+    text-align: center;
+    padding-left: 40%;
+    padding-right: 40%;
 }

@@ -31,7 +31,7 @@
 <div class="rightPage">
     <div class="contentbox d-flex justify-content-between">
         <div class="leftcontent">
-            <p class="display-4 text-center">
+            <p class="contenttitle display-4 text-center">
                 Contact Me
             </p>
         </div>
@@ -52,7 +52,6 @@
             <div class="allcomments justify-content-end" id="allcomments">
             </div>
         </div>
-
     </div>
     <div class="leftButton justify-content-between" id="leftbutton">
         <i class="arrow arrow-left" id="leftarrow"></i>
@@ -64,7 +63,9 @@
         <p class="contenttitle display-4 text-center">
             About Me
         </p>
-        <p class="contenttext p-1">My name is James Moon, I am a Web developer with experience with a vast variety of programming and design languages skills. I am a passionate designer of webpages and applications, and practice animation and film editing on the side. I enjoy the occasianal game and have made a few myself.</p>
+        <p class="contenttext p-1">My name is James Moon, I am a Web developer with experience with a vast variety of programming and design languages skills. I am a passionate designer of webpages and applications, and practice animation and film editing on the side. I enjoy the occasianal game and have made a few myself. One of my other passions is discovering and reviving old technology, including Desktops, applications, handhelds, consoles and servers. I'm a fan of emulation and combining the software and hardware side of development is I am passionate about.</p>
+        <p class="contenttext p-1">In terms of who I really am as a person, I come from a small area called Giants Creek, 2 hours north-west of Newcastle on a farm. Learning technology was very restricted where I was from due to lack of teaching knowledge (The main focus was Agriculture and Industrial Trade). University opened my mind to different styles never imagined and I continue to self-teach to this day.</p>
+        <p class="contenttext p-1" style="padding-right: 50%;">Feel free to grab any details from my "Contact Me" page located to the right of the home page. Check out some of my work on the page below home.</p>
     </div>
     <div class="rightButton justify-content-between" id="rightbutton">
         <i class="arrow arrow-right" id="rightarrow"></i>
@@ -72,13 +73,40 @@
 </div>
 
 <div class="bottomPage">
-    <div class="contentbox bottomcontext">
-        <p class="display-4 text-center">
+    <div class="contentboxlong">
+        <p class="contenttitle display-4 text-center">
             My Projects
         </p>
+        <p class="contenttext p-1">I have to be clear. Most of my projects are protected under university or work guidelines, but the ones I can show here are freely developed by James as "personal projects". Here is a list of just some of them:</p>
+        <div class="projects">
+            <div class="project">
+                <div class="leftproject">
+                    <h1>How-To Houdini</h1>
+                    <p>How-To Houdini started as a university project that I later cleaned up and polished to be an informative website for people just starting to use the 3D progressive animation software Houdini. The website featured videos and a simple chatbot that could be of assistance to the user on the site.</p>
+                </div>
+                <div class="rightproject">
+                    <img class="projectimage" src="~/img/howtohoudini.PNG" alt="HowToHoudiniHomepage" />
+                </div>
+            </div>
+            <div class="project">
+                <div class="leftproject">
+                    <h1>"Complexica" Animation</h1>
+                    <p>The hurdles of learning Houdini was the making of this animation. All models and character were built and animated by myself in Houdini.</p>
+                </div>
+                <div class="rightproject">
+                    <img class="projectimage" src="~/img/complexica.png" alt="Complexica" />
+                </div>
+            </div>
+            <div class="project">
+                <p class="absolutecenter">More to come in the future....</p>
+            </div>
+        </div>
     </div>
     <div class="topButton justify-content-between" id="topbutton">
         <i class="arrow arrow-top" id="toparrow"></i>
+    </div>
+    <div class="spacer">
+        <p class="shadowdemon">You ever heard of the Konami code?</p>
     </div>
 </div>
 
@@ -161,6 +189,7 @@
             if (active == '') {
                 active = 'bottom';
                 $('.bottomPage').toggleClass('activeBottom');
+                $('.bottomPage').toggleClass('scrollable');
             }
             else if (active == 'top') {
                 active = '';
@@ -177,6 +206,7 @@
             else if (active == 'bottom') {
                 active = '';
                 $('.bottomPage').toggleClass('activeBottom');
+                $('.bottomPage').toggleClass('scrollable');
             }
             //console.log(active);
         });
