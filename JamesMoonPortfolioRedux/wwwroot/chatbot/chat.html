@@ -68,7 +68,7 @@
         function sendMessage() {
             var text = $("#message").val();
             $("#message").val("");
-            $("#dialogue").append"<div class='anchor'><span class='user'>You:</span> " + text + "</div>");
+            $("#dialogue").append("<div class='anchor'><span class='user'>You:</span> " + text + "</div>");
 
             $.wait(100).then(
                 rs.reply("soandso", text, this).then(function (reply) {

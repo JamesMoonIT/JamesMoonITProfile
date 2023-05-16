@@ -2,7 +2,7 @@
     ViewData["Title"] = "James Moon's Profile";
 }
 <div class="home" id="home">
-    <div class="adminpanel">
+    <div id="test" class="adminpanel" hidden>
         <input type="button" value="Pop Titles" name="PopTitles" onclick="PopTitles()" />
     </div>
     <video autoplay muted loop id="myVideo">
@@ -100,8 +100,7 @@
                     GetComments();
                 },
                 error: function (request, status, error) {
-                    var responseText = request.responseText.split("\n")[0];
-                    alert(responseText);
+                    alert(request.responseText.split("\n")[0]);
                 }
             });
         };
@@ -127,8 +126,7 @@
                     document.getElementById("allcomments").innerHTML = allComments;
                 },
                 error: function (request, status, error) {
-                    var responseText = request.responseText.split("\n")[0];
-                    alert(responseText);
+                    alert(request.responseText.split("\n")[0]);
                 }
             });
         }
