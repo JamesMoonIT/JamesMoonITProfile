@@ -74,10 +74,6 @@ namespace JamesMoonPortfolioRedux.Controllers
             {
                 throw new CustomException(e.Message);
             } 
-            finally
-            {
-
-            }
             return true;
         }
     }

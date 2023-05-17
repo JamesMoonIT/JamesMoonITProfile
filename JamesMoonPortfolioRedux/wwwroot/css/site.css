@@ -18,6 +18,10 @@ html, body {
     src: url("../lib/fonts/roboto-bold/roboto-bold.woff") format('woff');
 }
 
+.home {
+    background-color: black;
+}
+
 .homeVisibility {
     height: 100%;
     width: 100%;
@@ -78,6 +82,10 @@ html, body {
     -moz-box-shadow: 0 0 30px rgb(255, 255, 255);
     -webkit-box-shadow: 0 0 30px rgb(255, 255, 255);
     box-shadow: 0 0 30px rgb(255, 255, 255);
+    overflow-y: auto;
+}
+
+@media (max-width: 850px) {
 }
 
 .contentboxlong {
@@ -93,7 +101,7 @@ html, body {
     box-shadow: 0 0 30px rgb(255, 255, 255);
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     .contentbox {
         height: 90vh;
         width: 90vw;
@@ -106,25 +114,88 @@ html, body {
         left: 5%;
         top: 5%;
     }
+
+    .contentbox h1 {
+        color: black;
+        font-size: 2em;
+    }
+
+    .contentboxlong h1 {
+        color: black;
+        font-size: 2em;
+    }
+
+    .contentbox p {
+        color: black;
+        font-size: 1.4em;
+    }
+
+    .contentboxlong p {
+        color: black;
+        font-size: 1em;
+    }
+
+    @media (min-width: 2082px) {
+        .contentbox h1 {
+            color: black;
+            font-size: 3em
+        }
+
+        .contentbox p {
+            color: black;
+            font-size: 2em;
+        }
+
+        .contentboxlong h1 {
+            font-size: 3em;
+        }
+
+        .contentboxlong p {
+            font-size: 2em;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .contentbox h1 {
+            color: black;
+            font-size: 1.5em;
+        }
+
+        .contentbox p {
+            color: black;
+            font-size: 0.8em;
+        }
+
+        .contentboxlong h1 {
+            font-size: 1.5em;
+        }
+
+        .contentboxlong p {
+            font-size: 0.8em;
+        }
+    }
 }
 
-.contentbox h1 {
-    color: black
-}
-
-.contentboxlong h1 {
-    color: black
-}
-
-.contentbox p {
+.contentbox h1, .contentbox p, .contentbox img, .contentboxlong h1, .contentboxlong p, .contentboxlong img {
+    width: 95%;
     color: black;
 }
 
-.contentboxlong p {
-    color: black;
+.contentbox h1, .contentboxlong h1 {
+    font-size: 3vw;
 }
 
-.contenttitle {
+.contentbox p, .contentboxlong p {
+    font-size: 1.2vw;
+    padding: 5%;
+}
+
+.contentbox img, .contentboxlong img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.contenttitle, {
     font-family: RobotoBold, Arial, Helvetica, sans-serif;
 }
 
@@ -526,20 +597,24 @@ html, body {
 
 .aboutsplit {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
 }
 
 .aboutsplitcell {
     display: flex;
     width: 50%;
+    overflow: hidden;
+    align-content: flex-start;
 }
 
-.aboutimage {
-    width: auto;
-    max-height: 30%;
-    border: 5px #000 medium;
-}
+    .aboutsplitcell img {
+        object-fit: scale-down;
+        width: 33%;
+        height: auto;
+        display: flex;
+    }
+
 @media (min-width: 950px) {
     .contenttext {
         font-size: 15px;

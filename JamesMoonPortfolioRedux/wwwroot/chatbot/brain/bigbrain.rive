@@ -10,8 +10,8 @@
 ^ - How is this bot built?\n
 ^ As well as a number of other commands. Think of this bot as a person and just ask away.
 
-+ (hi | hello | howdy | gday | morning | evening | greetings) [*]
-- Pleasure to meet you.
++ [*] (hi|hello|howdy|gday|morning|evening|greetings) [*]
+- Pleasure to meet you. Feel free to leave a question below.
 - Hi there. How can I help you?
 
 // Learn stuff about our users.
@@ -293,8 +293,8 @@
 + * (spare time | hobbies | hobby) [*]
 - James spends lots of time with family and friends rarely gets home. On the side of a story-heavy movie, book or game, James enjoys animation and video production, but due to being busy frequently, these hobbies are worked on less and less.
 
-+ * (sad | lonely | upsetting) [*]
-% * (spare time | hobbies | hobby) [*]
++ * (sad|lonely|upsetting) [*]
+% james spends lots of time with family and friends rarely gets home on the side of a story-heavy movie book or game james enjoys animation and video production but due to being busy frequently these hobbies are worked on less and less
 - Coming from a country area, James is familiar with isolation and completing work alone. This does not mean he can't work in a group environment. University and Work has opened up so many more opportunities that group work is normal now.
 
 + why did <bot master> (write | code | make) you [*]

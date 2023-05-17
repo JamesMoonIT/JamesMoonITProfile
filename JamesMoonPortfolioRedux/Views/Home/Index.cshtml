@@ -5,9 +5,9 @@
     <div id="test" class="adminpanel" hidden>
         <input type="button" value="Pop Titles" name="PopTitles" onclick="PopTitles()" />
     </div>
-    <video autoplay muted loop id="myVideo">
+    @*<video autoplay muted loop id="myVideo">
         <source src="~/img/animation.mp4" type="video/mp4" />
-    </video>
+    </video>*@
     <div class="titletext">
         <p>
             <!-- Welcome to James Moon's Portfolio -->
@@ -31,9 +31,9 @@
 <div class="rightPage">
     <div class="contentbox d-flex justify-content-between">
         <div class="leftcontent">
-            <p class="contenttitle display-4 text-center">
+            <h1 class="contenttitle display-4 text-center">
                 Contact Me
-            </p>
+            </h1>
         </div>
         <div class="comments">
             <p>Feel free to leave a comment with your thoughts on my profile. Please do not leave any personal details here as it is open to the public.</p>
@@ -60,17 +60,17 @@
 
 <div class="leftPage">
     <div class="contentbox">
-        <p class="contenttitle display-4 text-center">
+        <h1 class="contenttitle display-4 text-center">
             About Me
-        </p>
+        </h1>
         <p class="contenttext p-1">My name is James Moon, I am a Web developer with experience with a vast variety of programming and design languages skills. I am a passionate designer of webpages and applications, and practice animation and film editing on the side. I enjoy the occasianal game and have made a few myself. One of my other passions is discovering and reviving old technology, including Desktops, applications, handhelds, consoles and servers. I'm a fan of emulation and combining the software and hardware side of development is I am passionate about.</p>
         <p class="contenttext p-1">In terms of who I really am as a person, I come from a small area called Giants Creek, 2 hours north-west of Newcastle on a farm. Learning technology was very restricted where I was from due to lack of teaching knowledge (The main focus was Agriculture and Industrial Trade). University opened my mind to different styles never imagined and I continue to self-teach to this day.</p>
-        <div class="aboutsplit">
+        <div class="aboutsplit" id="splitintwain">
             <p class="aboutsplitcell contenttext p-1">Feel free to grab any details from my "Contact Me" page located to the right of the home page. Check out some of my work on the page below home.</p>
             <div class="aboutsplitcell">
-                <img class="aboutimage" src="~/img/me1.png" alt="me1" />
-                <img class="aboutimage" src="~/img/me3.jpg" alt="me3" />
-                <img class="aboutimage" src="~/img/me2.jpeg" alt="me2" />
+                <img src="~/img/me1.png" alt="me1" />
+                <img src="~/img/me3.jpg" alt="me3" />
+                <img src="~/img/me2.jpeg" alt="me2" />
             </div>
         </div>
     </div>
@@ -81,9 +81,9 @@
 
 <div class="bottomPage">
     <div class="contentboxlong">
-        <p class="contenttitle display-4 text-center">
+        <h1 class="contenttitle display-4 text-center">
             My Projects
-        </p>
+        </h1>
         <p class="contenttext p-1">I have to be clear. Most of my projects are protected under university or work guidelines, but the ones I can show here are freely developed by James as "personal projects". Here is a list of just some of them:</p>
         <div class="projects">
             <div class="project">
@@ -141,15 +141,6 @@
         };
 
         function GetComments() {
-            const options = {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false,
-                timeZone: 'Australia/Sydney'
-            };
             $.ajax({
                 url: '@Url.Action("GetComments", "Home")',
                 success: function (data) {
