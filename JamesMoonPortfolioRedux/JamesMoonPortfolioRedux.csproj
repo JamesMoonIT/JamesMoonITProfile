@@ -41,8 +41,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Client\" />
-    <Folder Include="Api\" />
     <Folder Include="wwwroot\lib\fonts\" />
   </ItemGroup>
 
