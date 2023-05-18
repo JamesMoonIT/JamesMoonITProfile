@@ -7,6 +7,9 @@
     "rivescript": "2.2.1"
   },
   "scripts": {
-    "build": "dotnet run"
+    "start": "dotnet run",
+    "test": "dotnet test",
+    "build": "dotnet build",
+    "publish": "dotnet publish"
   }
 }
