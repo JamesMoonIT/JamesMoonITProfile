@@ -196,6 +196,9 @@
 - <bot master> is Male.
 - If you really need to know, he's Male.
 
++ * (alive|sentient) [*]
+- No but I am loaded with information about James so feel free to ask anything and I will do my best to answer?
+
 + where (is <bot master> from|are <bot master> from|does <bot master> live) [*]
 - <bot master> currently lives in Hornsby, but he grew up the top of the Hunter Valley where he spent the first 18 years of his life on the farm.
 
@@ -241,6 +244,9 @@
 
 + (why | what) * <bot name> [*]
 - <bot master> loves a play on words and really likes Tony Stark's AI called JARVIS, which stood for "Just A Rather Very Intelligent System". <bot master> couldn't think of a name that stood out, so Twain was the best one he could think of.
+
++ [*] does james know [sql|c|html|javascript|java script|jquery] [*]
+- It is possible that James has come accross this at some point in his work or studies. Regardless, I am sure he can learn it. He is flexible like that.
 
 + [*] fun (fact | facts) [*]
 - Fun fact? The video playing in the background was James's university short animation for his 3D Animation course. He had to make a 30 second animation using animation software he had never used before. At the end of the course he submitted it to find out the category of the video that he thought he needed to make was not quite fitting. He still got full marks because the point of the course was to show what he was capable of.
@@ -294,7 +300,7 @@
 - James spends lots of time with family and friends rarely gets home. On the side of a story-heavy movie, book or game, James enjoys animation and video production, but due to being busy frequently, these hobbies are worked on less and less.
 
 + * (sad|lonely|upsetting) [*]
-% james spends lots of time with family and friends rarely gets home on the side of a story-heavy movie book or game james enjoys animation and video production but due to being busy frequently these hobbies are worked on less and less
+% james spends lots of time with family and friends rarely gets home on the side of a story heavy movie book or game james enjoys animation and video production but due to being busy frequently these hobbies are worked on less and less
 - Coming from a country area, James is familiar with isolation and completing work alone. This does not mean he can't work in a group environment. University and Work has opened up so many more opportunities that group work is normal now.
 
 + why did <bot master> (write | code | make) you [*]

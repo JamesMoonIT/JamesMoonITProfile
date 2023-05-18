@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "rivescript": "^2.2.1"
+    "firebase": "^9.22.0",
+    "rivescript": "^1.19.0"
   }
 }
