@@ -227,6 +227,7 @@ html, body {
     left: 5%;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+    z-index: 20;
 }
 
     .arrow-left:hover {
@@ -238,6 +239,7 @@ html, body {
     right: 5%;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    z-index: 20;
 }
 
     .arrow-right:hover {
@@ -249,6 +251,7 @@ html, body {
     right: 50%;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+    z-index: 20;
 }
 
     .arrow-bottom:hover {
@@ -260,6 +263,7 @@ html, body {
     right: 50%;
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
+    z-index: 20;
 }
 
     .arrow-top:hover {
