@@ -5,5 +5,9 @@
   "devDependencies": {
     "eslint": "^8.38.0",
     "rivescript": "2.2.1"
+  },
+  "scripts": {
+    "docs:build": "",
+    "start": "dotnet run"
   }
 }
