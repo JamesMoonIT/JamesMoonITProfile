@@ -1,15 +1,13 @@
 {
+  "name": "jamesmoonit.github.io",
   "version": "1.0.0",
-  "name": "asp.net",
-  "private": true,
+  "description": "James Moon's personal website",
   "devDependencies": {
     "eslint": "^8.38.0",
     "rivescript": "2.2.1"
   },
   "scripts": {
-    "start": "dotnet run",
-    "test": "dotnet test",
     "build": "dotnet build",
-    "publish": "dotnet publish"
+    "publish": "dotnet publish --configuration Release --output ./publish"
   }
 }
