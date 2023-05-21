@@ -1,5 +1,6 @@
 ﻿using JamesMoonPortfolioRedux.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.FileProviders;
 
 namespace JamesMoonPortfolioRedux
@@ -30,10 +31,11 @@ namespace JamesMoonPortfolioRedux
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseStaticFiles(); // For the wwwroot folder
+            var provider = new FileExtensionContentTypeProvider();
+            provider.Mappings[".rive"] = "text/rive";
             app.UseStaticFiles(new StaticFileOptions
             {
-                ServeUnknownFileTypes = true,
-                DefaultContentType = "text/rive"
+                ContentTypeProvider = provider
             });
             app.UseAuthorization();
             app.MapControllerRoute(
