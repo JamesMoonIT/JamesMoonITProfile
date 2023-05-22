@@ -9,24 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="chatbot\**" />
-    <Content Remove="chatbot\**" />
-    <EmbeddedResource Remove="chatbot\**" />
-    <None Remove="chatbot\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="wwwroot\chatbot\brain\begin.rive" />
-    <Content Remove="wwwroot\chatbot\brain\bigbrain.rive" />
-  </ItemGroup>
-
-  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\chatbot\brain\begin.rive" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="wwwroot\chatbot\brain\begin.rive" />
-    <Resource Include="wwwroot\chatbot\brain\bigbrain.rive" />
+    <_ContentIncludedByDefault Remove="wwwroot\chatbot\brain\bigbrain.rive" />
   </ItemGroup>
 
   <ItemGroup>
