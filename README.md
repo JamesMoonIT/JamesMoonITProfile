@@ -1,5 +1,3 @@
-Publish link: https://jamesmoonit.azurewebsites.net/
-
 This is a combination of the majority of my web skills in the form of a Personal Profile. This is intended to be see by employers seeking my skills in Web and Application Development, as well as Full-Stack Development and UX/UI Development.
 
 Languages used:
