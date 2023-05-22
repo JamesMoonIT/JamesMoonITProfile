@@ -78,6 +78,7 @@ html, body {
     width: 80vw;
     left: 10%;
     top: 10%;
+    padding: 4%;
     background-color: rgb(255, 255, 255, 0.8);
     -moz-box-shadow: 0 0 30px rgb(255, 255, 255);
     -webkit-box-shadow: 0 0 30px rgb(255, 255, 255);
@@ -94,6 +95,7 @@ html, body {
     width: 80vw;
     left: 10%;
     top: 10%;
+    padding:4%;
     overflow: auto;
     background-color: rgb(255, 255, 255, 0.8);
     -moz-box-shadow: 0 0 30px rgb(255, 255, 255);
@@ -187,7 +189,6 @@ html, body {
 
 .contentbox p, .contentboxlong p {
     font-size: 1.2vw;
-    padding: 5%;
 }
 
 .contentbox img, .contentboxlong img {
@@ -610,6 +611,36 @@ html, body {
     overflow: hidden;
     align-content: flex-start;
 }
+
+.aboutsplitcell img {
+    width: 40%;
+    height: auto;
+    padding: 5%;
+}
+
+.contactsplit {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.contactsplitcell {
+    display: flex;
+    width: 33%;
+    overflow: hidden;
+    flex-direction: column;
+    align-content: center;
+}
+
+    .contactsplitcell img {
+        width: 50%;
+        height: auto;
+        padding: 5%;
+    }
+
+    .contactsplitcell p {
+        font-size: 0.8em;
+    }
 
 @media (min-width: 950px) {
     .contenttext {

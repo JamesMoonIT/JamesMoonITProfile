@@ -14,7 +14,7 @@
 - Pleasure to meet you. Feel free to leave a question below.
 - Hi there. How can I help you?
 
-// Learn stuff about our users.
+// Learn stuff about the users.
 + my name is *
 - <set name=<formal>>Nice to meet you, <get name>.
 - <set name=<formal>><get name>, nice to meet you.
@@ -38,7 +38,7 @@
 + i (am from|live in) *
 - <set location={formal}<star2>{/formal}>I've spoken to people from <get location> before.
 
-+ [*] (really | no) [*]
++ [*] (really | no | not) [*]
 % i (am from|live in) *
 - No, but i thought I might suprise you.
 
@@ -242,10 +242,16 @@
 + [*] (language | languages) [*]
 - <bot master> knows C#, Javascript, jQuery, Python, Java, HTML, CSS. James has used C++ and R in the past but would be happy refamiliarizing it should it be needed.
 
++ * qualification [*]
+- James graduated university with a Bachelors of Information Technology, where he took on a double major in Systems Development & Interactive Media. This assisted James in software development, UX/UI Design, Media Production and Digital Media Practices & Regulations. Not only were both fields high in demand in today's world at the time, James had an existing passion for development, design and video production. This meant he excelled in these areas and has been able to use these skills in the industry. 
+
 + (why | what) * <bot name> [*]
 - <bot master> loves a play on words and really likes Tony Stark's AI called JARVIS, which stood for "Just A Rather Very Intelligent System". <bot master> couldn't think of a name that stood out, so Twain was the best one he could think of.
 
-+ [*] does james know [sql|c|html|javascript|java script|jquery] [*]
++ does james know (sql|c|html|javascript|java script|jquery) [*]
+- Yes. James is familiar with 
+
++ does james know [sql|c|html|javascript|java script|jquery] [*]
 - It is possible that James has come accross this at some point in his work or studies. Regardless, I am sure he can learn it. He is flexible like that.
 
 + [*] fun (fact | facts) [*]
@@ -266,7 +272,7 @@
 - <bot master> is a developer and media creator. He likes building websites, applications, animation and video production.
 
 + [*] else [*]
-% james is a software and web developer from the hunter valley he moved to sydney for work at ncs australia
+% (james is a software and web developer from the hunter valley he moved to sydney for work at ncs australia|james is a developer and media creator he likes building websites applications animation and video production)
 - James is very passionate about designing and building websites, applications, videos and animations from the ground up with his knowledge from university and hobbies.
 
 + [*] else [*]
@@ -284,7 +290,7 @@
 
 + [*] (yes | no) [*]
 % * interview *
-- His details should be at the top right of his CV. If for any reason you don't have his CV or can't find it, you are always capable of sending a direct message to James in LinkedIn. He should get back to you within 24 hours. Anything more questions?
+- His details should be at the top right of his CV. If for any reason you don't have his CV or can't find it, you can always send a direct message to James on LinkedIn. He should get back to you within 24 hours. Anything more questions?
 
 + * candidate [*]
 - I may be biased, but James becomes very committed to a task when he picks one up. However he usually surrounds himself with alot of tasks that he picks up. In an office environment, he focuses very well on projects.
@@ -296,7 +302,7 @@
 + * linkedin [*]
 - You can find James's LinkedIn profile here: <a href="https://www.linkedin.com/in/jamesmoonit/" target="_blank">James Moon</a>
 
-+ * (spare time | hobbies | hobby) [*]
++ * (hobbies | hobby) [*]
 - James spends lots of time with family and friends rarely gets home. On the side of a story-heavy movie, book or game, James enjoys animation and video production, but due to being busy frequently, these hobbies are worked on less and less.
 
 + * (sad|lonely|upsetting) [*]
@@ -308,18 +314,18 @@
 
 + no [*]
 - What else can I help you with?
-- No more questions? Feel free to ask about James or even myself.
+- No more questions? It's been a pleasure talking with you. I will be here when you want to ask more.
 - I have enjoyed chatting with you. Do you have any more questions?
 
 + no [*]
 % i have enjoyed chatting with you do you have any more questions
 - I hope you enjoy the rest of your day. I am always here.
 
-+ [*] (chatgpt | chat gpt) [*]
++ * (chatgpt | chat gpt) [*]
 - I am unfortunately not built with any iteration of Chat GPT. I am however build with a language known as RiveScript.
 
 + * (resume | cv) [*]
-- You can request a CV or Resume from James's LinkedIn profile here: <a href="https://www.linkedin.com/in/jamesmoonit/" target="_blank">James Moon</a>. I assume you got to this page either through 
+- You can request a CV or Resume from James's LinkedIn profile here: <a href="https://www.linkedin.com/in/jamesmoonit/" target="_blank">James Moon</a>. I assume you got to this page either through a URL on James's <star2> or his LinkedIn.
 
 + * (comment | comments) [*]
 - <bot master> build the comments section using some very basic json strings. It was originally intended to be hosted on a db, but due to networking issues and keeping expenses low, this alternative is more efficient for what it is storing.

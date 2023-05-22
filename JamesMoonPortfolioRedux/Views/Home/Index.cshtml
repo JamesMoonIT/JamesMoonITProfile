@@ -33,6 +33,24 @@
             <h1 class="contenttitle display-4 text-center">
                 Contact Me
             </h1>
+            <p class="contenttext p-1">I can be reached through a number of areas including LinkedIn, Email and Github. Should you seek more information regarding my current work, a project or a fault on the website, you can use any of the following contact methods:</p>
+            <div class="contactsplit" id="splitintwain">
+                <div class="contactsplitcell">
+                    <a href="https://linkedin.com/in/jamesmoonit/"><img src="~/img/linkedin.png" alt="me1" class="img-fluid" /></a>
+                    <p class="contenttext">This is the best way of getting in contact. I will usually reply within 24 hour.</p>             
+                </div>
+                <div class="contactsplitcell">
+                    <a href="https://github.com/JamesMoonIT"><img src="~/img/GitHub-Mark.png" alt="me3" class="img-fluid" /></a>
+                    <p class="contenttext">If you have any concerns with the website or would like to collaborate on a project, you can find my Github here.</p>
+                </div>
+                <div class="contactsplitcell">
+                    <a href="mailto:jamesmoon1221@gmail.com"><img src="~/img/email.png" alt="me3" class="img-fluid" /></a>
+                    <p class="contenttext">This is another good means of sharing details. I check this everyday, and this also helps if you have documents to share.</p>
+                </div>
+                
+                
+            </div>
+            <p class="contenttext p-1">For security purposes, I will not be disclosing my phone number, work email or company phone as a means of getting in contact as it would be a security risk to myself and the company I currently work for. Please understand that it is not a risk I would like to make, but if you truly are interested in learning together, you can ask for a private means of contact through LinkedIn.</p>
         </div>
         <div class="comments">
             <p>Feel free to leave a comment with your thoughts on my profile. Please do not leave any personal details here as it is open to the public.</p>
@@ -69,7 +87,6 @@
             <div class="aboutsplitcell">
                 <img src="~/img/me1.png" alt="me1" class="img-fluid" />
                 <img src="~/img/me3.jpg" alt="me3" class="img-fluid" />
-                <img src="~/img/me2.jpeg" alt="me2" class="img-fluid" />
             </div>
         </div>
     </div>
@@ -254,5 +271,15 @@
             $('.navtext-bottom').toggleClass('activenavtext-bottom');
             $('.navtext-left').toggleClass('activenavtext-left');
         }
+
+        function enableScroll() {
+            document.body.style.overflow = 'auto';
+        }
+
+        function disableScroll() {
+            document.body.style.overflow = 'hidden';
+        }
+
+        window.addEventListener('load', disableScroll);
     </script>
 }

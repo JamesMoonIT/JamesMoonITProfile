@@ -51,7 +51,7 @@
 
         function onReady() {
             $("#dialogue").append("<i><center>Brain loaded successfully</center></i><p></p>");
-            $("#dialogue").append("<div><span class='bot'>TWAIN:</span> Hi there. Don't be suprised, but my name is Technology Without An Interesting Name, or Twain for short. I am James's personal chatbot. Feel free to ask about James or even myself and I will do my best to answer. I'd be very happy to answer any questions you may have.");
+            $("#dialogue").append("<div><span class='bot'>TWAIN:</span> Hi there. Welcome to James's Profile. My name is Technology Without An Interesting Name, or Twain for short. I am James's personal chatbot. Feel free to ask about James or even myself and I will do my best to answer. I'll give your questions my best shot!");
             $("#message").removeAttr("disabled");
             $("#message").attr("placeholder", "Send message");
             $("#message").focus();
@@ -64,21 +64,31 @@
             $("#dialogue").append('<div><span class="bot">Error:</span> ' + err + '</div>');
         }
 
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+
+        function wait(ms) {
+            var start = new Date().getTime();
+            var end = start;
+            while (end < start + ms) {
+                end = new Date().getTime();
+            }
+        }
+
         // Handle sending a message to the bot.
         function sendMessage() {
             var text = $("#message").val();
             $("#message").val("");
             $("#dialogue").append("<div class='anchor'><span class='user'>You:</span> " + text + "</div>");
 
-            $.wait(100).then(
-                rs.reply("soandso", text, this).then(function (reply) {
-                    reply = reply.replace(/\n/g, "<br>");
-                    $("#dialogue").append("<div class='anchor'><span class='bot'>TWAIN:</span> " + reply + "</div>");
-                    scrollToBottom();
-                }).catch(function (e) {
-                    window.alert(e.message + "\n" + e.line);
-                    console.log(e);
-                }));
+            rs.reply("soandso", text, this).then(function (reply) {
+                reply = reply.replace(/\n/g, "<br>");
+                wait(2000);
+                $("#dialogue").append("<div class='anchor'><span class='bot'>TWAIN:</span> " + reply + "</div>");
+                scrollToBottom();
+            }).catch(function (e) {
+                window.alert(e.message + "\n" + e.line);
+                console.log(e);
+            });
 
             return false;
         }
