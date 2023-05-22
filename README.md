@@ -15,6 +15,7 @@ Skills used:
 - MVC Web Development
 - Web Design
 - HCI Analysis
+- Photoshop
 
 Major Hurdles:
 - Deploying Rivescript bot in a C# .Net Core Environment
