@@ -595,8 +595,7 @@ html, body {
 .absolutecenter {
     display: flex;
     text-align: center;
-    padding-left: 40%;
-    padding-right: 40%;
+    justify-content: center;
 }
 
 .aboutsplit {
@@ -611,13 +610,6 @@ html, body {
     overflow: hidden;
     align-content: flex-start;
 }
-
-    .aboutsplitcell img {
-        object-fit: scale-down;
-        width: 33%;
-        height: auto;
-        display: flex;
-    }
 
 @media (min-width: 950px) {
     .contenttext {
