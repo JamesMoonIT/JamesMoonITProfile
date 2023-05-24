@@ -82,7 +82,6 @@
 
             rs.reply("soandso", text, this).then(function (reply) {
                 reply = reply.replace(/\n/g, "<br>");
-                wait(2000);
                 $("#dialogue").append("<div class='anchor'><span class='bot'>TWAIN:</span> " + reply + "</div>");
                 scrollToBottom();
             }).catch(function (e) {

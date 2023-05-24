@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="index.html" />
+    <Content Include="Index.html" />
   </ItemGroup>
 
   <ItemGroup>
