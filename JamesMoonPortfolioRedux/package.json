@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "JamesMoonIT's Profile'",
   "scripts": {
-    "build": "dotnet publish -c Release -o ./wwwroot",
+    "build": "dotnet run",
+    "publish": "dotnet publish -c Release -o ./wwwroot",
     "preinstall": "npm install -g azure-functions-core-tools@3 --unsafe-perm true",
     "start": "dotnet run",
     "postinstall": "npm run build"
