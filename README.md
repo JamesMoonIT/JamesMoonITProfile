@@ -23,10 +23,10 @@ Major Hurdles:
 - Developing json database for comments.
 
 Removed features:
-- Self-hosting on lcoal machine
+- Self-hosting on local machine
     - This caused lots of issues for the server I use for hosting as I use the machine for more than web hosting.
 -  Storing comments on sqlserver db
-    - This was to also be hosted on local server.
+    - This was to also be hosted on the same local server.
 - Implement 3rd party Rivescript C# Library
     - The library caused problems with Azure. The original code my the rivescript bot was based on Java and I configured my site to accept javascript Rivescript inside a .NET Core evironment rather than rebuilding in C#.
 
