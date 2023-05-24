@@ -1,22 +1,18 @@
 ﻿<!DOCTYPE html>
-<html lang="en-au">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Vanilla JavaScript App</title>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            window.location.pathname = "/Home/Index";
-        });
+    <title>Redirect to Profile</title>
+    <script>
+        // Automatically redirect to the specified URL
+        window.location.href = '/Home/Index';
     </script>
 </head>
-
 <body>
-    <main>
-        Redirecting...
-    </main>
-</body>
+    <p>Redirecting.....</p>
 
+    <form action="./Home/Index" method="POST">
+        <input type="submit" value="Redirect">
+    </form>
+
+</body>
 </html>
