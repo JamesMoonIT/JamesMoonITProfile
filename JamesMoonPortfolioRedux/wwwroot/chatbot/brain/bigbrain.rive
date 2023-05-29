@@ -321,8 +321,14 @@
 % i have enjoyed chatting with you do you have any more questions
 - I hope you enjoy the rest of your day. I am always here.
 
++ * built on [*]
+- I am built on a language known as RiveScript. My responses are hard-coded but flexible, and read keywords to give you the right responses. I have been built with an extensive number of responses regarding James and myself. You may find some questions I cannot answer.
+
++ [*] rivescript [*]
+- This version of rivescript is a javascript-based chat language that uses keywords and phrases to build responses based on queries. Rivescript also works with Go, Java, Perl and Python.
+
 + * (chatgpt | chat gpt) [*]
-- I am unfortunately not built with any iteration of Chat GPT. I am however build with a language known as RiveScript.
+- I am unfortunately not built with any iteration of ChatGPT. I am built with a language known as RiveScript.
 
 + * (resume | cv) [*]
 - You can request a CV or Resume from James's LinkedIn profile here: <a href="https://www.linkedin.com/in/jamesmoonit/" target="_blank">James Moon</a>. I assume you got to this page either through a URL on James's <star2> or his LinkedIn.
@@ -349,3 +355,5 @@
 - I'm not sure how to reply to that. Could you perhaps be more specific with your question?
 - I don't know how to reply to that. Would you mind rephrasing it?
 - I don't understand what you mean by that. I am limited by my responses so would you mind rewording your question?
+- I don't have access to this information unfortunately. I am limited in my responses so if you need anything else, let me know.
+- That information is beyond me unfortunately. Perhaps I will have this later but for now, I cannot help you with that.
