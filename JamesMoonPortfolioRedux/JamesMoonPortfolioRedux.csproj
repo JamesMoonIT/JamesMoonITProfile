@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Copyright>JamesMoonIT</Copyright>
     <PackageProjectUrl>Index.html</PackageProjectUrl>
+    <ApplicationIcon>wwwroot\img\user.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
