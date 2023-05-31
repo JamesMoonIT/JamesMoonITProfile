@@ -132,6 +132,12 @@ html, body {
         font-size: 1.4em;
     }
 
+    @media (max-width: 767px) {
+        .contentbox p {
+            font-size: 1em;
+        }
+    }
+
     .contentboxlong p {
         color: black;
         font-size: 1em;
@@ -188,7 +194,13 @@ html, body {
 }
 
 .contentbox p, .contentboxlong p {
-    font-size: 1.2vw;
+    font-size: 1.4em;
+}
+
+@media (max-width: 767px) {
+    .contentbox p, .contentboxlong p {
+        font-size: 0.8em;
+    }
 }
 
 .contentbox img, .contentboxlong img {
@@ -204,6 +216,13 @@ html, body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+    .contenttext {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 .contentboxlong .bottomcontext {
@@ -457,6 +476,14 @@ html, body {
     width: 50px;
 }
 
+@media (max-width: 767px) {
+    .open-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
 /* The popup chat - hidden by default */
 .chat-popup {
     display: none;
@@ -564,6 +591,16 @@ html, body {
     right: 0;
 }
 
+@media (max-width: 767px) {
+    .leftproject {
+        padding: 10px;
+    }
+
+    .rightproject {
+        padding: 5px;
+    }
+}
+
 .projectimage {
     width: 100%;
     height: auto;
@@ -605,6 +642,12 @@ html, body {
     display: flex;
 }
 
+@media (max-width: 767px) {
+    .aboutsplit {
+        flex-direction: column;
+    }
+}
+
 .aboutsplitcell {
     display: flex;
     width: 50%;
@@ -642,8 +685,8 @@ html, body {
         font-size: 0.8em;
     }
 
-@media (min-width: 950px) {
-    .contenttext {
-        font-size: 15px;
+@media (max-width: 767px) {
+    .contactsplitcell p {
+        font-size: 0.5em;
     }
 }

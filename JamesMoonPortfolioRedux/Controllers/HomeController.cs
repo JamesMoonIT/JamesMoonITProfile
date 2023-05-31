@@ -25,11 +25,6 @@ namespace JamesMoonPortfolioRedux.Controllers
         public List<Comment> StoreComment(string author, string comment)
         {
             List<Comment> allcomments = GetComments();
-            if (author.Length > 25 || comment.Length > 500) 
-            {
-                // should never hit because of front end, but incase someone thinks they can break my website.
-                throw new Exception("Character limit breached. Don't try to be smart and break my site in Developer Tools!");
-            }
             bool valid = ValidateComment(author, comment);
             if (valid)
             {
@@ -51,6 +46,11 @@ namespace JamesMoonPortfolioRedux.Controllers
         {
             try
             {
+                // 0. If you dont type anything.
+                if (author.Length <= 0 || comment.Length <= 0)
+                {
+                    throw new CustomException("Please fill both the Author and Your Comment field. If you wish to remain anonymous, you can write Anonymous.");
+                }
                 // 1. If character limit is breached manually
                 if (author.Length > 25 || comment.Length > 500)
                 {
