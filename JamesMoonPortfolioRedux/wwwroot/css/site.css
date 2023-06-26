@@ -656,7 +656,8 @@ html, body {
 }
 
 .aboutsplitcell img {
-    height: auto;
+    height: 100%;
+    width: auto;
 }
 
 .contactsplit {
