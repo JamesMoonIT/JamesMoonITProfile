@@ -38,7 +38,7 @@
 + i (am from|live in) *
 - <set location={formal}<star2>{/formal}>I've spoken to people from <get location> before.
 
-+ [*] (really | no | not) [*]
++ [*] (really | no | not | dont | havnt) [*]
 % i (am from|live in) *
 - No, but i thought I might suprise you.
 
@@ -197,7 +197,7 @@
 - If you really need to know, he's Male.
 
 + * (alive|sentient) [*]
-- No but I am loaded with information about James so feel free to ask anything and I will do my best to answer?
+- No but I am loaded with information about James so feel free to ask anything and I will do my best to answer
 
 + where (is <bot master> from|are <bot master> from|does <bot master> live) [*]
 - <bot master> currently lives in Hornsby, but he grew up the top of the Hunter Valley where he spent the first 18 years of his life on the farm.
@@ -206,19 +206,22 @@
 % where (is <bot master> from|are <bot master> from|does <bot master> live) [*]
 - He assisted his father with farm work and when he wasn't doing that, he was behind a computer either doing work, playing games with friends or making videos.
 
++ what * <bot master> do [*]
+- James is currently working for a company called NCS Australia as a Web Developer. While his skills go beyond this, his official position is "Graduate Developer" and works with a number of web technologies, designs, testing and implementation strategies.
+
 + [*] [(city|town)] (is <bot master> from|does <bot master> live in) [*]
 - <bot master> grew up in the top of the Hunter Valley on a farm, but has moved to Sydney for work as a Software developer.
 
-+ what * games [*]
++ what (video games | games) * <bot master> [*]
 - <bot master> enjoys a good story game, but it might be best to leave the games talk outside. Is there any other questions related to projects you would like answering?
 
 + what is <bot master> favorite color
 - <bot master> enjoy's the colour Red for many reasons which I won't get into.
 
-+ what is <bot master> favorite (band | song | music)
++ [*] <bot master> favorite (band | song | music)
 - <bot master> listens to many types of music including Techno, EDM and Trance all the way to Swing, Jazz and Blues.
 
-+ what is <bot master> (favorite | favourite) book [*]
++ [*] <bot master> [*] (favorite | favourite) book [*]
 - <bot master> enjoys the Lord of the Ring's books. He hasn't read them yet, but has seen the movies many times and watched videos about the books.
 
 + what is <bot master> (occupation | job)
@@ -236,7 +239,7 @@
 + what do you do [*]
 - I'm here to assist anyone with any information about James that I am allowed to disclose.
 
-+ who is <bot master> favorite author [*]
++ who is <bot master> * favorite author [*]
 - I do not have a favourite author, but a facinating author I learned of is William Gibson who wrote the book Neuromancer. Very interesting concepts.
 
 + [*] (language | languages) [*]
@@ -248,10 +251,8 @@
 + (why | what) * <bot name> [*]
 - <bot master> loves a play on words and really likes Tony Stark's AI called JARVIS, which stood for "Just A Rather Very Intelligent System". <bot master> couldn't think of a name that stood out, so Twain was the best one he could think of.
 
-+ does james know (sql|c|html|javascript|java script|jquery) [*]
-- Yes. James is familiar with 
-
-+ does james know [sql|c|html|javascript|java script|jquery] [*]
++ does <bot master> know (sql|c|html|javascript|java script|jquery) [*]
+- Yes. James is familiar with <star>
 - It is possible that James has come accross this at some point in his work or studies. Regardless, I am sure he can learn it. He is flexible like that.
 
 + [*] fun (fact | facts) [*]
