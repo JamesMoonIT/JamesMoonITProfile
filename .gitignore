@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# James Custom gitignore
+JamesMoonPortfolioRedux\wwwroot\data\Comment.json
