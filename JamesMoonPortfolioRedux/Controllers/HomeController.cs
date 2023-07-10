@@ -4,12 +4,16 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text.Json;
 using ProfanityFilter;
+using System.Text;
 
 namespace JamesMoonPortfolioRedux.Controllers
 {
     public class HomeController : Controller
     {
         private readonly string filepath = @".\wwwroot\data\Comment.json";
+        private readonly string apipathGET = @"https://api.jsonbin.io/v3/b/64ab5553b89b1e2299bc7475?meta=false";
+        private readonly string apipathPUT = @"https://api.jsonbin.io/v3/b/64ab5553b89b1e2299bc7475";
+
 
         public IActionResult Index()
         {
@@ -18,26 +22,65 @@ namespace JamesMoonPortfolioRedux.Controllers
 
         public List<Comment> GetComments()
         {
-            List<Comment> comments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(System.IO.File.ReadAllText(filepath)) ?? new List<Comment>();
+            List<Comment> comments = new List<Comment>();
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-Master-Key", "$2b$10$csAm2BVAu8I0tSKnlJjkOuOWnLbwlMKdqL6XY/c4GChhH0NUHs0bu");
+                HttpResponseMessage response = client.GetAsync(apipathGET).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = response.Content.ReadAsStringAsync().Result;
+                    comments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(jsonResponse) ?? new List<Comment>();
+                }
+                //else
+                //{
+                //    comments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(System.IO.File.ReadAllText(filepath)) ?? new List<Comment>();
+                //}
+            }
             return comments;
         }
 
         public List<Comment> StoreComment(string author, string comment)
         {
-            List<Comment> allcomments = GetComments();
-            bool valid = ValidateComment(author, comment);
+            List<Comment> allComments = GetComments();
+            bool valid = ValidateComment(author, comment);          
             if (valid)
             {
-                allcomments.Add(
+                var newestComment = allComments.Max(x => x.CommentID) + 1;
+                //Comment newComment = new Comment { CommentID = newestComment, CommentAuthor = author, CommentString = comment, CommentDate = DateTime.Now.ToString("g") };
+                allComments.Add(
                     new Comment
                     {
-                        CommentID = allcomments.Max(c => c.CommentID) + 1,
+                        CommentID = allComments.Max(c => c.CommentID) + 1,
                         CommentAuthor = author,
                         CommentString = comment,
                         CommentDate = DateTime.Now.ToString("g")
                     }
                 );
-                System.IO.File.WriteAllText(filepath, JsonConvert.SerializeObject(allcomments));
+                var jsonData = JsonConvert.SerializeObject(allComments);
+                var serialized = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                using (HttpClient client = new HttpClient())
+                {
+                    try
+                    {
+                        client.DefaultRequestHeaders.Add("X-Master-Key", "$2b$10$csAm2BVAu8I0tSKnlJjkOuOWnLbwlMKdqL6XY/c4GChhH0NUHs0bu");
+                        HttpResponseMessage response = client.PutAsync(apipathPUT, serialized).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string jsonResponse = response.Content.ReadAsStringAsync().Result;
+                        }
+                        else
+                        {
+                            throw new Exception($"API failed to send data. Error: {response.StatusCode}");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        throw new Exception($"Failed to compile json data, or could not send data to storage. Error: {e.Message}");
+                    }
+                }
+                //System.IO.File.WriteAllText(filepath, JsonConvert.SerializeObject(allcomments));
             }
             return GetComments();
         }
@@ -69,11 +112,11 @@ namespace JamesMoonPortfolioRedux.Controllers
                 {
                     throw new CustomException("Comment contains profanity. Please refrain from posting this in the comments.");
                 }
-            } 
+            }
             catch (CustomException e)
             {
                 throw new CustomException(e.Message);
-            } 
+            }
             return true;
         }
     }
