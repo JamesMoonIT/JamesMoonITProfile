@@ -63,7 +63,10 @@
                     <label for="comment">Your Comment</label>
                     <input type="text" maxlength="500" id="comment" />
                 </div>
-                <input type="button" id="submitComment" title="Send" value="Send" />
+                <div class="submitrow">
+                    <input type="button" id="submitComment" title="Send" value="Send" />
+                    <img id="toggleimage" src="~/img/mark.png" alt="apistatus" class="apistatus" title="The API is either still loading or returning an error." width="50px" height="auto" />
+                </div>
             </div>
             <hr />
             <div class="allcomments justify-content-end" id="allcomments">
@@ -151,7 +154,7 @@
         //console.log(ViewBag.CommentID + ", " + ViewBag.CommentAuthor + ", " + ViewBag.CommentString + ", " + ViewBag.CommentDate);
 
         $(document).ready(function () {
-            window.scrollTo(0,0);
+            window.scrollTo(0, 0);
             GetComments();
         });
 
@@ -176,12 +179,22 @@
         };
 
         function GetComments() {
+            const toggleimage = document.getElementById('toggleimage');
             $.ajax({
                 url: '@Url.Action("GetComments", "Home")',
                 success: function (data) {
                     var allComments = "";
                     for (let i = data.length - 1; i > -1; i--) {
                         var comment = data[i];
+                        if (comment["commentID"] == 999) {
+                            allComments = "<p class='backup'><i>If your reading this, it means the API has failed to retrieve the comments and is using a backup method to retrieve comments. These may be outdated as these are added manually by James.</i></p>";
+                            toggleimage.src = "/img/cross.png";
+                            toggleimage.title = "The API is currently down. A backup method is being used until it API is back online";
+                        }
+                        else {
+                            toggleimage.src = "/img/tick.png"
+                            toggleimage.title = "The API is online.";
+                        }
                         allComments += "<div class='comment'><div class='comment-meta'><span class='comment-author'>" + comment["commentAuthor"] + "</span><span class='comment-date'>" + comment["commentDate"] + "</span></div><div class='comment-text'><p'>" + comment["commentString"] + "</p></div></div>";
                     }
                     document.getElementById("allcomments").innerHTML = allComments;
@@ -279,8 +292,8 @@
             $('.navtext-left').toggleClass('activenavtext-left');
         }
 
-        document.addEventListener('touchmove', function(event) {
+        document.addEventListener('touchmove', function (event) {
             event.preventDefault();
-        }, {passive: false });
+        }, { passive: false });
     </script>
 }

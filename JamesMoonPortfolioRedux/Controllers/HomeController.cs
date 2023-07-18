@@ -11,9 +11,6 @@ namespace JamesMoonPortfolioRedux.Controllers
     public class HomeController : Controller
     {
         private readonly string filepath = @".\wwwroot\data\Comment.json";
-        private readonly string apipathGET = @"https://api.jsonbin.io/v3/b/64ab5553b89b1e2299bc7475?meta=false";
-        private readonly string apipathPUT = @"https://api.jsonbin.io/v3/b/64ab5553b89b1e2299bc7475";
-
 
         public IActionResult Index()
         {
@@ -23,66 +20,59 @@ namespace JamesMoonPortfolioRedux.Controllers
         public List<Comment> GetComments()
         {
             List<Comment> comments = new List<Comment>();
-            using (HttpClient client = new HttpClient())
+            try // try the api to see if it is capable of returning comments
             {
-                client.DefaultRequestHeaders.Add("X-Master-Key", "$2b$10$csAm2BVAu8I0tSKnlJjkOuOWnLbwlMKdqL6XY/c4GChhH0NUHs0bu");
-                HttpResponseMessage response = client.GetAsync(apipathGET).Result;
-                if (response.IsSuccessStatusCode)
+                using (HttpClient client = new HttpClient())
                 {
-                    string jsonResponse = response.Content.ReadAsStringAsync().Result;
-                    comments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(jsonResponse) ?? new List<Comment>();
+                    HttpResponseMessage response = client.GetAsync("https://jamesmoonitprofilecomments.azurewebsites.net/Comment/GetComments").Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string jsonResponse = response.Content.ReadAsStringAsync().Result;
+                        comments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(jsonResponse) ?? new List<Comment>();
+                    }
+                    else
+                    {
+                        throw null;
+                    }
                 }
-                //else
-                //{
-                //    comments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(System.IO.File.ReadAllText(filepath)) ?? new List<Comment>();
-                //}
+            }
+            catch // if the api fails to return comments, fall back to backup
+            {
+                comments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(System.IO.File.ReadAllText(filepath)) ?? new List<Comment>();
             }
             return comments;
         }
 
         public List<Comment> StoreComment(string author, string comment)
         {
-            List<Comment> allComments = GetComments();
-            bool valid = ValidateComment(author, comment);          
-            if (valid)
+            List<Comment> allComments = new List<Comment>();
+            if (ValidateComment(author, comment)) // If the comment and author name do not contain profanity
             {
-                var newestComment = allComments.Max(x => x.CommentID) + 1;
-                //Comment newComment = new Comment { CommentID = newestComment, CommentAuthor = author, CommentString = comment, CommentDate = DateTime.Now.ToString("g") };
+                if (!IsApiDown()) // If the api could be contacted on page load
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        HttpResponseMessage response = client.PutAsync("https://jamesmoonitprofilecomments.azurewebsites.net/Comment/AddComment?author=" + author + "&comment=" + comment, null).Result; // Send author and comment to external api
+                        if (response.Content.ReadAsStringAsync().Result == "true")
+                        {
+                            //Add check if process is successful. Not a required feature yet, but set up incase I want to use it later.
+                        }
+                    }
+                }
+                allComments = System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(System.IO.File.ReadAllText(filepath)) ?? new List<Comment>();
                 allComments.Add(
                     new Comment
                     {
-                        CommentID = allComments.Max(c => c.CommentID) + 1,
-                        CommentAuthor = author,
-                        CommentString = comment,
-                        CommentDate = DateTime.Now.ToString("g")
-                    }
-                );
+                        commentID = allComments.Max(c => c.commentID) + 1,
+                        commentAuthor = author,
+                        commentString = comment,
+                        commentDate = DateTime.Now.ToString("g")
+                    });
                 var jsonData = JsonConvert.SerializeObject(allComments);
-                var serialized = new StringContent(jsonData, Encoding.UTF8, "application/json");
-                using (HttpClient client = new HttpClient())
-                {
-                    try
-                    {
-                        client.DefaultRequestHeaders.Add("X-Master-Key", "$2b$10$csAm2BVAu8I0tSKnlJjkOuOWnLbwlMKdqL6XY/c4GChhH0NUHs0bu");
-                        HttpResponseMessage response = client.PutAsync(apipathPUT, serialized).Result;
-
-                        if (response.IsSuccessStatusCode)
-                        {
-                            string jsonResponse = response.Content.ReadAsStringAsync().Result;
-                        }
-                        else
-                        {
-                            throw new Exception($"API failed to send data. Error: {response.StatusCode}");
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        throw new Exception($"Failed to compile json data, or could not send data to storage. Error: {e.Message}");
-                    }
-                }
-                //System.IO.File.WriteAllText(filepath, JsonConvert.SerializeObject(allcomments));
+                System.IO.File.WriteAllText(filepath, JsonConvert.SerializeObject(allComments));
+                return GetComments();
             }
-            return GetComments();
+            return System.Text.Json.JsonSerializer.Deserialize<List<Comment>>(System.IO.File.ReadAllText(filepath)) ?? new List<Comment>();
         }
 
         private bool ValidateComment(string author, string comment)
@@ -90,7 +80,7 @@ namespace JamesMoonPortfolioRedux.Controllers
             try
             {
                 // 0. If you dont type anything.
-                if (author.Length <= 0 || comment.Length <= 0)
+                if ((author == null || comment == null) || (author.Length <= 0 || comment.Length <= 0))
                 {
                     throw new CustomException("Please fill both the Author and Your Comment field. If you wish to remain anonymous, you can write Anonymous.");
                 }
@@ -118,6 +108,18 @@ namespace JamesMoonPortfolioRedux.Controllers
                 throw new CustomException(e.Message);
             }
             return true;
+        }
+
+        private bool IsApiDown()
+        {
+            using (HttpClient c = new HttpClient())
+            {
+                if (c.GetAsync("https://jamesmoonitprofilecomments.azurewebsites.net/Ping").Result.Content.ReadAsStringAsync().Result == "Pong")
+                {
+                    return false;
+                }
+                return true;
+            }
         }
     }
 }

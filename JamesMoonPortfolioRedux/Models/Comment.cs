@@ -2,12 +2,12 @@
 {
     public class Comment
     {
-        public int CommentID { get; set; }
+        public int commentID { get; set; }
 
-        public string CommentAuthor { get; set; } = String.Empty;
+        public string commentAuthor { get; set; } = String.Empty;
 
-        public string CommentString { get; set; } = String.Empty;
+        public string commentString { get; set; } = String.Empty;
 
-        public string CommentDate { get; set; } = String.Empty;
+        public string commentDate { get; set; } = String.Empty;
     }
 }
