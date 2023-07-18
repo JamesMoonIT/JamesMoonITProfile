@@ -64,7 +64,10 @@
                     <input type="text" maxlength="500" id="comment" />
                 </div>
                 <div class="submitrow">
-                    <input type="button" id="submitComment" title="Send" value="Send" />
+                    <div>
+                        <input type="button" id="submitComment" title="Send" value="Send" />
+                        <p id="submitting" hidden>Submitting...</p>
+                    </div>
                     <img id="toggleimage" src="~/img/mark.png" alt="apistatus" class="apistatus" title="The API is either still loading or returning an error." width="50px" height="auto" />
                 </div>
             </div>
@@ -159,6 +162,7 @@
         });
 
         document.getElementById("submitComment").onclick = function () {
+            $("#submitting").prop('hidden', null);
             $('#submitComment').prop('disabled', true);
             var author = document.getElementById("author").value;
             var comment = document.getElementById("comment").value;
@@ -170,10 +174,12 @@
                     $('#author').val('');
                     $('#comment').val('');
                     $('#submitComment').prop('disabled', false);
+                    $("#submitting").prop('hidden', 'hidden');
                 },
                 error: function (request, status, error) {
                     alert(request.responseText.split("\n")[0]);
                     $('#submitComment').prop('disabled', false);
+                    $("#submitting").prop('hidden', 'hidden');
                 }
             });
         };
