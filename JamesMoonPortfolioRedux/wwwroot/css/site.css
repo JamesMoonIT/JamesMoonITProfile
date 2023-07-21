@@ -662,10 +662,10 @@ html, body {
     align-content: flex-start;
 }
 
-    .aboutsplitcell img {
-        height: 100%;
-        width: auto;
-    }
+.aboutsplitcell img {
+    height: auto;
+    width: 100%;
+}
 
 .contactsplit {
     width: 100%;
