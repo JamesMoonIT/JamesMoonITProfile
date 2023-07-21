@@ -3,7 +3,7 @@
 }
 <div class="home" id="home">
     <div id="test" class="adminpanel" hidden>
-        <input type="button" value="Pop Titles" name="PopTitles" onclick="PopTitles()" />
+        <input type="button" value="Pop Titles" name="PopTitles" onclick="PopTitles()" title="This is mostly for design testing. Its hard centering text that constantly dissappears off the screen." />
     </div>
     <video autoplay muted loop id="myVideo">
         <source src="~/img/animation.mp4" type="video/mp4" />
@@ -64,11 +64,14 @@
                     <input type="text" maxlength="500" id="comment" />
                 </div>
                 <div class="submitrow">
-                    <div>
+                    <div class="subrow">
                         <input type="button" id="submitComment" title="Send" value="Send" />
                         <p id="submitting" hidden>Submitting...</p>
                     </div>
-                    <img id="toggleimage" src="~/img/mark.png" alt="apistatus" class="apistatus" title="The API is either still loading or returning an error." width="50px" height="auto" />
+                    <div class="subrow">
+                        <p id="loading">Loading API...</p>
+                        <img id="toggleimage" src="~/img/mark.png" alt="apistatus" class="apistatus" title="The API is either still loading or returning an error." width="50px" height="auto" />
+                    </div>
                 </div>
             </div>
             <hr />
@@ -204,6 +207,7 @@
                         allComments += "<div class='comment'><div class='comment-meta'><span class='comment-author'>" + comment["commentAuthor"] + "</span><span class='comment-date'>" + comment["commentDate"] + "</span></div><div class='comment-text'><p'>" + comment["commentString"] + "</p></div></div>";
                     }
                     document.getElementById("allcomments").innerHTML = allComments;
+                    $("#loading").prop('hidden', 'hidden');
                 },
                 error: function (request, status, error) {
                     alert(request.responseText.split("\n")[0]);
