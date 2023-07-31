@@ -719,3 +719,8 @@ html, body {
     .submitrow p {
         font-size: 1em;
     }
+
+.textBlack {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
