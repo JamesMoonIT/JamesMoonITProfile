@@ -4,6 +4,7 @@
 <div class="home" id="home">
     <div id="test" class="adminpanel" hidden>
         <input type="button" value="Pop Titles" name="PopTitles" onclick="PopTitles()" title="This is mostly for design testing. Its hard centering text that constantly dissappears off the screen." />
+        <input type="button" value="Test Modal" name="TestModal" onclick="OpenModal()" title="Test the modal window for larger project" data-bs-toggle="modal" data-bs-target="#TestModal" />
     </div>
     <video autoplay muted loop id="myVideo">
         <source src="~/img/animation.mp4" type="video/mp4" />
@@ -153,6 +154,25 @@
     <div class="spacer">
         <p class="shadowdemon">You ever heard of the Konami code?</p>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="TestModal" tabindex="-1" aria-labelledby="Test Modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="textBlack">This is purely for testing Bootstrap and javascript. I usually leave things like this in incase I need to reference it later when I need it (future project, offline help).</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 @section scripts {
