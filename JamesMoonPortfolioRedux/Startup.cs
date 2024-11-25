@@ -41,6 +41,7 @@ namespace JamesMoonPortfolioRedux
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.Use(async (context, next) => { if (context.Request.Path == "/") { context.Response.Redirect("https://jamesmoonit.azurewebsites.net/fun/floppatest.html"); } else { await next(); } });
             app.MapRazorPages();
             app.Run();
         }
