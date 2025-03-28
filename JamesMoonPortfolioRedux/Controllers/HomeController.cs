@@ -14,6 +14,7 @@ namespace JamesMoonPortfolioRedux.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Comments = GetComments();
             return View();
         }
 
