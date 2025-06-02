@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Time Difference";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="timeDifferenceForm">
+    <input type="date" id="startDate" name="startDate">
+    <input type="date" id="endDate" name="endDate">
+    <button type="button" onclick="getTimeDifference()">Get Time Difference</button>
+</form>
+
+<p id="result">Please enter a start and end date</p>
+
+@section Scripts {
+    <script>
+        async function getTimeDifference() {
+            debugger;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+
+        const response = await fetch('/Tools/GetTimeDifference', {
+             method: 'POST',
+             headers: {
+                 'Content-Type': 'application/json',
+             },
+             body: JSON.stringify({ startDate, endDate })
+        });
+
+         const data = await response.json();
+         if (data.success) {
+             document.getElementById('result').innerText = `These two dates have a total time difference of ${data.difference}`;
+         } else {
+             document.getElementById('result').innerText = `Error: ${data.message}`;
+         }
+        }
+    </script>
+}

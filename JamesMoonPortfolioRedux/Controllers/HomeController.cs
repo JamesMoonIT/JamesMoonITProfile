@@ -1,10 +1,6 @@
 ﻿using JamesMoonPortfolioRedux.Models;
-using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Text.Json;
-using ProfanityFilter;
-using System.Text;
 
 namespace JamesMoonPortfolioRedux.Controllers
 {
