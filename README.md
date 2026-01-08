@@ -1,3 +1,5 @@
+EDIT: This portfolio is no longer updated and was replaced with a newer portfolio in a private repository. You can find the link to the portfolio on my Profile page.
+
 This is a combination of the majority of my web skills in the form of a Personal Profile. This is intended to be seen by employers seeking my skills in Web and Application Development, as well as Full-Stack Development and UX/UI Development. The plan was to keep this private, but as Rivescript doesn't have any support for MVC or Core architecture, I thought to make this public and searchable under the "rivescript" tag for any developers.
 
 Languages used:
